@@ -8,12 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-gradient-start: #8b006e;
-      --bg-gradient-end: #360048;
-      --text: #ffffff;
-      --accent-pink: #ff69b4;
-      --card-bg: rgba(0, 0, 0, 0.7);
-      --divider: #000000;
+      --bg-start: #f7e9f0;
+      --bg-end: #d0c4f7;
+      --text: #1a1a1a;
+      --accent-pink: #ff90c2;
+      --accent-purple: #caa6ff;
+      --accent-blue: #a0e4ff;
+      --card-bg: rgba(255, 255, 255, 0.3);
+      --divider: rgba(0, 0, 0, 0.2);
     }
 
     * {
@@ -24,7 +26,7 @@
 
     body {
       font-family: 'Rajdhani', sans-serif;
-      background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-end));
+      background: linear-gradient(to bottom right, var(--bg-start), var(--bg-end));
       color: var(--text);
       padding: 0 20px;
       min-height: 100vh;
@@ -39,14 +41,14 @@
       width: 100%;
       height: 100%;
       background: url('https://www.transparenttextures.com/patterns/stardust.png');
-      opacity: 0.08;
-      animation: moveStars 200s linear infinite;
+      opacity: 0.07;
+      animation: moveStars 150s linear infinite;
       z-index: 0;
     }
 
     @keyframes moveStars {
       0% { transform: translate(0, 0); }
-      100% { transform: translate(-1000px, -1000px); }
+      100% { transform: translate(-800px, -800px); }
     }
 
     header, footer {
@@ -61,23 +63,22 @@
       position: relative;
       display: inline-block;
       color: var(--text);
-      text-shadow: 0 0 6px rgba(255,255,255,0.2);
+      text-shadow: 0 0 6px rgba(255,255,255,0.15);
     }
 
-    .orbiter {
+    .flower-orbit {
+      position: absolute;
+      top: -12px;
+      right: -30px;
       width: 12px;
       height: 12px;
-      background: white;
-      border-radius: 50%;
-      position: absolute;
-      top: -10px;
-      right: -30px;
-      animation: orbit 3s linear infinite;
+      font-size: 16px;
+      animation: orbit 5s linear infinite;
     }
 
     @keyframes orbit {
-      0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
-      100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+      0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
     }
 
     h2 {
@@ -102,8 +103,9 @@
     }
 
     nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 8px white;
+      background-color: var(--accent-pink);
+      color: white;
+      box-shadow: 0 0 10px var(--accent-pink);
     }
 
     .bio, .contact {
@@ -115,20 +117,21 @@
       background-color: var(--card-bg);
       padding: 25px 30px;
       border-radius: 14px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
       position: relative;
       z-index: 1;
     }
 
     .project {
       background-color: var(--card-bg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 25px 30px;
       margin: 0 auto 35px;
       border-radius: 14px;
       max-width: 750px;
       text-align: center;
-      box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 14px rgba(255, 255, 255, 0.12);
       transition: transform 0.2s ease, box-shadow 0.3s ease;
       position: relative;
       z-index: 1;
@@ -136,7 +139,7 @@
 
     .project:hover {
       transform: translateY(-4px);
-      box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 18px var(--accent-purple);
     }
 
     .project h3 {
@@ -146,13 +149,13 @@
     }
 
     a {
-      color: var(--accent-pink);
+      color: var(--accent-purple);
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     a:hover {
-      color: white;
+      color: var(--accent-blue);
     }
 
     .circuit-divider {
@@ -186,7 +189,7 @@
 
     footer {
       font-size: 0.85em;
-      color: #eee;
+      color: #333;
       margin-top: 80px;
       position: relative;
       z-index: 1;
@@ -198,9 +201,9 @@
   <header>
     <h1>
       Mackenzie Treadway
-      <div class="orbiter"></div>
+      <div class="flower-orbit">🌸</div>
     </h1>
-    <h2>Software Engineer | Creative Tech Enthusiast</h2>
+    <h2> Aspiring Software Engineer | Creative Tech Enthusiast</h2>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -260,6 +263,7 @@
 
 </body>
 </html>
+
 
 
 
