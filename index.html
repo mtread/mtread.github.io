@@ -41,6 +41,7 @@
       height: 100px;
       margin: 0 auto 20px;
       position: relative;
+      animation: rotateWeb 12s linear infinite;
     }
 
     .data-web span {
@@ -60,13 +61,11 @@
       transform-origin: left;
     }
 
-    /* Place dots */
     .dot1 { top: 10px; left: 10px; animation-delay: 0s; }
     .dot2 { top: 10px; right: 10px; animation-delay: 0.3s; }
     .dot3 { bottom: 10px; left: 20px; animation-delay: 0.6s; }
     .dot4 { bottom: 10px; right: 15px; animation-delay: 0.9s; }
 
-    /* Connecting lines */
     .line1 { top: 13px; left: 13px; width: 74px; transform: rotate(0deg); }
     .line2 { top: 13px; left: 13px; width: 90px; transform: rotate(50deg); }
     .line3 { top: 87px; left: 20px; width: 60px; transform: rotate(-20deg); }
@@ -75,6 +74,11 @@
     @keyframes blink {
       0% { opacity: 1; }
       100% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    @keyframes rotateWeb {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .typed-name {
@@ -301,6 +305,7 @@
 
 </body>
 </html>
+
 
 
 
