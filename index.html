@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Mackenzie Treadway, a software engineer passionate about building elegant and efficient solutions." />
+  <meta name="description" content="Portfolio of Mackenzie Treadway, an aspiring software engineer passionate about building efficient and elegant solutions." />
   <title>Mackenzie Treadway - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
@@ -13,18 +13,19 @@
       --text-secondary: #7e899a;
       --accent: #56c7c1;
       --divider: #47b6c8;
-      --card-bg: #1a1e25;
+      --bio-bg: #181b22;
+      --card-bg: rgba(28, 31, 38, 0.9);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text-primary);
       padding: 0 20px 60px;
     }
@@ -35,101 +36,139 @@
       position: relative;
     }
 
-    .orbit-ring {
-      width: 80px;
-      height: 80px;
-      border: 2px solid var(--accent);
-      border-radius: 50%;
+    .data-web {
+      width: 100px;
+      height: 100px;
       margin: 0 auto 20px;
       position: relative;
-      animation: spin 10s linear infinite;
     }
 
-    .orbit-dot {
-      width: 8px;
-      height: 8px;
+    .data-web span {
+      position: absolute;
+      width: 6px;
+      height: 6px;
       background: var(--accent);
       border-radius: 50%;
+      animation: blink 2.5s infinite alternate;
+    }
+
+    .data-web .line {
       position: absolute;
-      top: 5px;
-      left: 50%;
-      transform: translateX(-50%);
+      height: 1.5px;
+      background: var(--accent);
+      opacity: 0.3;
+      transform-origin: left;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    /* Place dots */
+    .dot1 { top: 10px; left: 10px; animation-delay: 0s; }
+    .dot2 { top: 10px; right: 10px; animation-delay: 0.3s; }
+    .dot3 { bottom: 10px; left: 20px; animation-delay: 0.6s; }
+    .dot4 { bottom: 10px; right: 15px; animation-delay: 0.9s; }
+
+    /* Connecting lines */
+    .line1 { top: 13px; left: 13px; width: 74px; transform: rotate(0deg); }
+    .line2 { top: 13px; left: 13px; width: 90px; transform: rotate(50deg); }
+    .line3 { top: 87px; left: 20px; width: 60px; transform: rotate(-20deg); }
+    .line4 { top: 13px; right: 13px; width: 60px; transform: rotate(70deg); }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; transform: scale(0.85); }
     }
 
-    h1 {
+    .typed-name {
       font-family: 'Rajdhani', sans-serif;
       font-weight: 600;
-      font-size: 3.6em;
+      font-size: 2.6em;
       color: var(--accent);
-      margin-bottom: 0.2em;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--accent);
+      width: 0;
+      margin: 0 auto 20px;
+      animation: typing 3s steps(25, end) forwards, blinkCursor 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 20ch; }
+    }
+
+    @keyframes blinkCursor {
+      50% { border-color: transparent; }
     }
 
     .subtitle {
       font-family: 'Rajdhani', sans-serif;
       font-weight: 300;
-      font-size: 1.6em;
+      font-size: 1.4em;
       color: var(--text-secondary);
+      margin-top: 10px;
       margin-bottom: 40px;
     }
 
+    nav {
+      margin-bottom: 50px;
+    }
+
     nav a {
+      font-weight: 600;
       color: var(--text-primary);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-      margin: 0 18px;
-      padding: 8px 14px;
+      font-size: 1.05em;
+      margin: 0 14px;
+      padding: 8px 12px;
       border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: 0.3s;
     }
 
     nav a:hover {
       background-color: var(--accent);
-      color: var(--bg);
+      color: #0e1116;
     }
 
     section {
-      max-width: 750px;
+      max-width: 740px;
       margin: 0 auto 50px;
       background-color: var(--card-bg);
-      padding: 32px 38px;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(86, 199, 193, 0.08);
+      padding: 32px 36px;
+      border-radius: 14px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 20px rgba(86, 199, 193, 0.12);
     }
 
     #about {
+      background-color: var(--bio-bg);
       text-align: center;
     }
 
     #about p {
-      color: var(--text-secondary);
-      font-size: 1.2em;
+      font-size: 1.15em;
       line-height: 1.8;
-      margin-bottom: 20px;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
     }
 
     .project {
-      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(86, 199, 193, 0.25);
       padding: 24px;
+      border-radius: 10px;
       margin-bottom: 30px;
-      border-radius: 12px;
-      border: 1px solid rgba(86, 199, 193, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: 0.3s;
+      background-color: rgba(255, 255, 255, 0.03);
     }
 
     .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(86, 199, 193, 0.25);
+      box-shadow: 0 0 20px var(--accent);
+      transform: translateY(-4px);
     }
 
     .project h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .project p {
@@ -138,16 +177,18 @@
 
     a {
       color: var(--accent);
+      text-decoration: none;
     }
 
     a:hover {
-      color: var(--text-primary);
+      text-decoration: underline;
+      color: #8ef2eb;
     }
 
     .circuit-divider {
       height: 3px;
       background: var(--divider);
-      margin: 70px auto;
+      margin: 60px auto;
       max-width: 85%;
       border-radius: 3px;
       position: relative;
@@ -157,11 +198,11 @@
     .circuit-divider::after {
       content: "";
       position: absolute;
-      top: -7px;
-      width: 14px;
-      height: 14px;
+      width: 10px;
+      height: 10px;
       background: var(--divider);
       border-radius: 50%;
+      top: -4px;
     }
 
     .circuit-divider::before {
@@ -173,19 +214,27 @@
     }
 
     footer {
+      font-size: 0.9em;
       text-align: center;
-      font-size: 0.85em;
       color: #555;
-      margin-top: 90px;
+      margin-top: 80px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="orbit-ring" aria-hidden="true">
-      <div class="orbit-dot"></div>
+    <div class="data-web" aria-hidden="true">
+      <span class="dot1"></span>
+      <span class="dot2"></span>
+      <span class="dot3"></span>
+      <span class="dot4"></span>
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+      <div class="line line4"></div>
     </div>
-    <h1>Mackenzie Treadway</h1>
+    <div class="typed-name">Hey, Mackenzie here!</div>
     <div class="subtitle">Aspiring Software Engineer</div>
     <nav>
       <a href="#about">About</a>
@@ -195,7 +244,7 @@
   </header>
 
   <section id="about">
-    <h2 style="color: var(--accent); margin-bottom: 20px;">About Me</h2>
+    <h2 style="color: var(--accent); font-family:'Rajdhani',sans-serif;">About Me</h2>
     <p>
       I'm a senior Computer Science student with a minor in Art, passionate about building elegant, efficient software solutions. Since high school, I’ve developed a strong foundation in data structures, algorithms, and full-stack development through both coursework and personal projects.
     </p>
@@ -210,7 +259,7 @@
   <div class="circuit-divider"></div>
 
   <section id="projects">
-    <h2 style="color: var(--accent); text-align:center; margin-bottom: 30px;">Projects</h2>
+    <h2 style="color: var(--accent); font-family:'Rajdhani',sans-serif; text-align:center; margin-bottom:30px;">Projects</h2>
 
     <div class="project">
       <h3>Java Object-Oriented Shapes Program</h3>
@@ -240,7 +289,7 @@
   <div class="circuit-divider"></div>
 
   <section id="contact">
-    <h2 style="color: var(--accent); text-align:center; margin-bottom: 24px;">Contact</h2>
+    <h2 style="color: var(--accent); font-family:'Rajdhani',sans-serif; text-align:center;">Contact</h2>
     <p style="text-align:center;">
       Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank">GitHub</a>.
     </p>
@@ -249,8 +298,10 @@
   <footer>
     &copy; 2025 Mackenzie Treadway
   </footer>
+
 </body>
 </html>
+
 
 
 
