@@ -36,51 +36,13 @@
       position: relative;
     }
 
-    .data-web {
+    /* New SVG container styling */
+    .circuit-svg {
       width: 100px;
       height: 100px;
       margin: 0 auto 20px;
-      position: relative;
-    }
-
-    .data-web span {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-      animation: blink 2.5s infinite alternate;
-    }
-
-    .data-web .line {
-      position: absolute;
-      height: 1.5px;
-      background: var(--accent);
-      opacity: 0.3;
-      transform-origin: center;
-      animation: spinLine 8s linear infinite;
-    }
-
-    /* Dot positions */
-    .dot1 { top: 10px; left: 10px; animation-delay: 0s; }
-    .dot2 { top: 10px; right: 10px; animation-delay: 0.3s; }
-    .dot3 { bottom: 10px; left: 20px; animation-delay: 0.6s; }
-    .dot4 { bottom: 10px; right: 15px; animation-delay: 0.9s; }
-
-    /* Line positions and starting rotation */
-    .line1 { top: 13px; left: 13px; width: 74px; transform: rotate(0deg); }
-    .line2 { top: 13px; left: 13px; width: 90px; transform: rotate(50deg); }
-    .line3 { top: 87px; left: 20px; width: 60px; transform: rotate(-20deg); }
-    .line4 { top: 13px; right: 13px; width: 60px; transform: rotate(70deg); }
-
-    @keyframes spinLine {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes blink {
-      0% { opacity: 1; }
-      100% { opacity: 0.5; transform: scale(0.85); }
+      filter: drop-shadow(0 0 6px var(--accent));
+      /* subtle glow */
     }
 
     .typed-name {
@@ -230,16 +192,25 @@
 <body>
 
   <header>
-    <div class="data-web" aria-hidden="true">
-      <span class="dot1"></span>
-      <span class="dot2"></span>
-      <span class="dot3"></span>
-      <span class="dot4"></span>
-      <div class="line line1"></div>
-      <div class="line line2"></div>
-      <div class="line line3"></div>
-      <div class="line line4"></div>
-    </div>
+    <!-- Minimal SVG Circuit -->
+    <svg class="circuit-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <!-- Circle nodes -->
+      <circle cx="50" cy="50" r="6" fill="var(--accent)" />
+      <circle cx="30" cy="30" r="4" fill="var(--accent)" />
+      <circle cx="70" cy="30" r="4" fill="var(--accent)" />
+      <circle cx="30" cy="70" r="4" fill="var(--accent)" />
+      <circle cx="70" cy="70" r="4" fill="var(--accent)" />
+      <!-- Lines connecting nodes -->
+      <line x1="50" y1="50" x2="30" y2="30" stroke="var(--accent)" stroke-width="1.5" />
+      <line x1="50" y1="50" x2="70" y2="30" stroke="var(--accent)" stroke-width="1.5" />
+      <line x1="50" y1="50" x2="30" y2="70" stroke="var(--accent)" stroke-width="1.5" />
+      <line x1="50" y1="50" x2="70" y2="70" stroke="var(--accent)" stroke-width="1.5" />
+      <line x1="30" y1="30" x2="70" y2="30" stroke="var(--accent)" stroke-width="0.7" />
+      <line x1="30" y1="70" x2="70" y2="70" stroke="var(--accent)" stroke-width="0.7" />
+      <line x1="30" y1="30" x2="30" y2="70" stroke="var(--accent)" stroke-width="0.7" />
+      <line x1="70" y1="30" x2="70" y2="70" stroke="var(--accent)" stroke-width="0.7" />
+    </svg>
+
     <div class="typed-name">Hey, Mackenzie here!</div>
     <div class="subtitle">Aspiring Software Engineer</div>
     <nav>
@@ -307,6 +278,7 @@
 
 </body>
 </html>
+
 
 
 
