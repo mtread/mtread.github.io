@@ -41,7 +41,6 @@
       height: 100px;
       margin: 0 auto 20px;
       position: relative;
-      animation: rotateWeb 12s linear infinite;
     }
 
     .data-web span {
@@ -58,27 +57,30 @@
       height: 1.5px;
       background: var(--accent);
       opacity: 0.3;
-      transform-origin: left;
+      transform-origin: center;
+      animation: spinLine 8s linear infinite;
     }
 
+    /* Dot positions */
     .dot1 { top: 10px; left: 10px; animation-delay: 0s; }
     .dot2 { top: 10px; right: 10px; animation-delay: 0.3s; }
     .dot3 { bottom: 10px; left: 20px; animation-delay: 0.6s; }
     .dot4 { bottom: 10px; right: 15px; animation-delay: 0.9s; }
 
+    /* Line positions and starting rotation */
     .line1 { top: 13px; left: 13px; width: 74px; transform: rotate(0deg); }
     .line2 { top: 13px; left: 13px; width: 90px; transform: rotate(50deg); }
     .line3 { top: 87px; left: 20px; width: 60px; transform: rotate(-20deg); }
     .line4 { top: 13px; right: 13px; width: 60px; transform: rotate(70deg); }
 
+    @keyframes spinLine {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
     @keyframes blink {
       0% { opacity: 1; }
       100% { opacity: 0.5; transform: scale(0.85); }
-    }
-
-    @keyframes rotateWeb {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
     }
 
     .typed-name {
@@ -269,7 +271,7 @@
       <h3>Java Object-Oriented Shapes Program</h3>
       <p>CLI-based shape calculator demonstrating object-oriented design with inheritance and polymorphism.</p>
       <p><strong>Skills:</strong> Java, OOP, CLI, Inheritance, Polymorphism</p>
-      <p><a href="https://github.com/mtread/cmsc335-shapes" target="_blank">View Code on GitHub</a></p>
+      <p><a href="https://github.com/mtread/cmsc335-shapes" target="_blank" rel="noopener noreferrer">View Code on GitHub</a></p>
     </div>
 
     <div class="project">
@@ -277,8 +279,8 @@
       <p>Interactive recreation of Pong built using HTML5 Canvas and JavaScript with simple AI and collision logic.</p>
       <p><strong>Skills:</strong> JavaScript, HTML5 Canvas, Game Logic, UX, GitHub Pages</p>
       <p>
-        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">View Code</a> |
-        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Play the Game</a>
+        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank" rel="noopener noreferrer">View Code</a> |
+        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank" rel="noopener noreferrer">Play the Game</a>
       </p>
     </div>
 
@@ -286,7 +288,7 @@
       <h3>Coffea Arabica – Brand Website</h3>
       <p>A responsive landing page for a fictional coffee brand showcasing front-end layout and branding.</p>
       <p><strong>Skills:</strong> HTML, CSS, Responsive Design, Branding</p>
-      <p><a href="https://mtread.github.io/coffea-arabica/" target="_blank">View Live Site</a></p>
+      <p><a href="https://mtread.github.io/coffea-arabica/" target="_blank" rel="noopener noreferrer">View Live Site</a></p>
     </div>
   </section>
 
@@ -295,7 +297,7 @@
   <section id="contact">
     <h2 style="color: var(--accent); font-family:'Rajdhani',sans-serif; text-align:center;">Contact</h2>
     <p style="text-align:center;">
-      Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank">GitHub</a>.
+      Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank" rel="noopener noreferrer">GitHub</a>.
     </p>
   </section>
 
@@ -305,6 +307,7 @@
 
 </body>
 </html>
+
 
 
 
