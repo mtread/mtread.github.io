@@ -2,23 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Mackenzie Treadway, a creative computer science student and software engineer passionate about games, software, and design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Mackenzie Treadway, an aspiring software engineer passionate about building efficient and elegant solutions." />
   <title>Mackenzie Treadway - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    
-  :root {
-  --bg-start: #f9dce7;       /* soft sakura pink */
-  --bg-end: #cbb6ef;         /* soft lavender */
-  --text: #333333;
-  --accent-pink: #ff90c2;
-  --accent-purple: #caa6ff;
-  --accent-blue: #a0e4ff;
-  --accent-green: #7fa88e;   /* muted leaf green */
-  --card-bg: rgba(255, 255, 255, 0.3);
-  --divider: var(--accent-green);
-}
+    :root {
+      --bg-start: #f7e5eb; /* softer blush pink */
+      --bg-end: #cbb6ef;   /* muted lavender */
+      --text-primary: #444444;
+      --text-secondary: #666666;
+      --accent-pink: #ff90c2;
+      --accent-green: #7fa88e; /* muted leaf green */
+      --card-bg: rgba(255, 255, 255, 0.3);
+      --divider: var(--accent-green);
+    }
 
     * {
       box-sizing: border-box;
@@ -27,15 +25,16 @@
     }
 
     body {
-      font-family: 'Rajdhani', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       background: linear-gradient(to bottom right, var(--bg-start), var(--bg-end));
-      color: var(--text);
-      padding: 0 20px;
+      color: var(--text-primary);
+      padding: 0 20px 60px;
       min-height: 100vh;
       position: relative;
       overflow-x: hidden;
     }
 
+    /* subtle star pattern with very low opacity */
     body::before {
       content: "";
       position: fixed;
@@ -43,14 +42,9 @@
       width: 100%;
       height: 100%;
       background: url('https://www.transparenttextures.com/patterns/stardust.png');
-      opacity: 0.07;
-      animation: moveStars 150s linear infinite;
+      opacity: 0.03;
       z-index: 0;
-    }
-
-    @keyframes moveStars {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(-800px, -800px); }
+      pointer-events: none;
     }
 
     header, footer {
@@ -61,103 +55,125 @@
     }
 
     h1 {
-      font-size: 3.5em;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 3.6em;
       position: relative;
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.15em;
+      text-shadow: 0 0 4px rgba(0,0,0,0.05);
       display: inline-block;
-      color: var(--text);
-      text-shadow: 0 0 6px rgba(255,255,255,0.15);
     }
 
     .flower-orbit {
       position: absolute;
-      top: -12px;
-      right: -30px;
-      width: 12px;
-      height: 12px;
-      font-size: 16px;
-      animation: orbit 5s linear infinite;
+      top: -16px;
+      right: -38px;
+      width: 14px;
+      height: 14px;
+      font-size: 18px;
+      animation: orbit 9s linear infinite;
+      user-select: none;
     }
 
     @keyframes orbit {
-      0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
-      100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+      0% { transform: rotate(0deg) translateX(38px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(38px) rotate(-360deg); }
     }
 
-    h2 {
-      color: var(--text);
-      margin-top: 14px;
+    .subtitle {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 300;
       font-size: 1.6em;
-      text-shadow: 0 0 3px rgba(255,255,255,0.1);
+      color: var(--accent-pink);
+      letter-spacing: 0.1em;
+      margin-bottom: 30px;
+      text-shadow: 0 0 5px var(--accent-pink);
     }
 
     nav {
-      margin: 25px 0 40px;
+      margin-bottom: 50px;
     }
 
     nav a {
-      margin: 0 14px;
+      font-weight: 600;
+      color: var(--text-primary);
       text-decoration: none;
-      color: var(--text);
-      font-weight: bold;
-      padding: 6px 10px;
-      border-radius: 4px;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1.1em;
+      margin: 0 18px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       background-color: var(--accent-pink);
       color: white;
-      box-shadow: 0 0 10px var(--accent-pink);
+      box-shadow: 0 0 15px var(--accent-pink);
+      outline: none;
     }
 
-    .bio, .contact {
+    section {
       max-width: 750px;
       margin: 0 auto 50px;
-      text-align: center;
-      font-size: 1.15em;
-      line-height: 1.9;
       background-color: var(--card-bg);
-      padding: 25px 30px;
-      border-radius: 14px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      padding: 28px 36px;
+      border-radius: 16px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 20px rgba(255 255 255 / 0.12);
+      color: var(--text-primary);
       position: relative;
       z-index: 1;
+    }
+
+    section p {
+      font-size: 1.15em;
+      line-height: 1.85;
+      color: var(--text-secondary);
     }
 
     .project {
-      background-color: var(--card-bg);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 25px 30px;
-      margin: 0 auto 35px;
-      border-radius: 14px;
-      max-width: 750px;
       text-align: center;
-      box-shadow: 0 0 14px rgba(255, 255, 255, 0.12);
+      margin-bottom: 40px;
+      border: 1px solid rgba(255 255 255 / 0.15);
+      box-shadow: 0 0 16px rgba(255 255 255 / 0.10);
       transition: transform 0.2s ease, box-shadow 0.3s ease;
-      position: relative;
-      z-index: 1;
     }
 
     .project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 18px var(--accent-purple);
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px var(--accent-pink);
     }
 
     .project h3 {
-      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 1.45em;
+      color: var(--text-primary);
       margin-bottom: 12px;
-      font-size: 1.4em;
+      letter-spacing: 0.04em;
+    }
+
+    .project p {
+      color: var(--text-secondary);
+      margin-bottom: 8px;
     }
 
     a {
-      color: var(--accent-purple);
+      color: var(--accent-pink);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.25s ease;
+      font-weight: 600;
     }
 
-    a:hover {
-      color: var(--accent-blue);
+    a:hover,
+    a:focus {
+      color: var(--accent-green);
+      text-decoration: underline;
+      outline: none;
     }
 
     .circuit-divider {
@@ -166,7 +182,7 @@
       margin: 70px auto;
       max-width: 85%;
       position: relative;
-      border-radius: 2px;
+      border-radius: 3px;
       z-index: 1;
     }
 
@@ -174,9 +190,9 @@
     .circuit-divider::after {
       content: "";
       position: absolute;
-      top: -6px;
-      width: 12px;
-      height: 12px;
+      top: -7px;
+      width: 14px;
+      height: 14px;
       background: var(--divider);
       border-radius: 50%;
     }
@@ -190,11 +206,34 @@
     }
 
     footer {
+      font-family: 'Open Sans', sans-serif;
       font-size: 0.85em;
-      color: #444;
-      margin-top: 80px;
+      color: #555555;
+      margin-top: 90px;
       position: relative;
       z-index: 1;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2.8em;
+      }
+      .flower-orbit {
+        right: -28px;
+        top: -12px;
+        font-size: 14px;
+        width: 10px;
+        height: 10px;
+      }
+      nav a {
+        margin: 0 10px;
+        padding: 6px 10px;
+        font-size: 1em;
+      }
+      section {
+        padding: 20px 24px;
+        margin-bottom: 40px;
+      }
     }
   </style>
 </head>
@@ -203,59 +242,62 @@
   <header>
     <h1>
       Mackenzie Treadway
-      <div class="flower-orbit">🌸</div>
+      <div class="flower-orbit" aria-hidden="true">🌸</div>
     </h1>
-    <h2>Aspiring Software Engineer | Creative Tech Enthusiast</h2>
-    <nav>
+    <div class="subtitle" aria-label="Aspiring Software Engineer">Aspiring Software Engineer</div>
+    <nav role="navigation" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="about" class="bio">
+  <section id="about" aria-labelledby="about-heading">
+    <h2 id="about-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--text-primary); text-align:center; margin-bottom:24px;">About Me</h2>
     <p>
-      I’m in my senior year of university pursuing my Bachelor’s degree in Computer Science with a minor in Art. I've loved video games since I was a kid and have always been fascinated by how they work behind the scenes.
-      I enjoy solving problems creatively and thrive in dynamic, collaborative environments. Whether I’m designing user interfaces or building backend systems, I’m passionate about delivering practical, joyful solutions.
+      I am a senior Computer Science student with a minor in Art, driven by a passion for building efficient, scalable software solutions that solve real-world problems. I have hands-on experience in object-oriented programming, front-end development, and collaborative projects using agile methodologies.
+    </p>
+    <p>
+      I thrive in fast-paced, team-oriented environments where creativity and problem-solving are essential. I am eager to contribute to innovative software engineering teams, continuously grow my skills, and deliver high-quality products that impact users positively.
     </p>
   </section>
 
-  <div class="circuit-divider"></div>
+  <div class="circuit-divider" role="presentation"></div>
 
-  <section id="projects">
-    <h2 style="text-align:center;">Projects</h2>
+  <section id="projects" aria-labelledby="projects-heading">
+    <h2 id="projects-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--text-primary); text-align:center; margin-bottom:36px;">Projects</h2>
 
-    <div class="project">
+    <div class="project" role="article" tabindex="0">
       <h3>Java Object-Oriented Shapes Program</h3>
       <p>CLI-based shape calculator demonstrating object-oriented design with inheritance and polymorphism.</p>
       <p><strong>Skills:</strong> Java, OOP, CLI, Inheritance, Polymorphism</p>
-      <p><a href="https://github.com/mtread/cmsc335-shapes" target="_blank">View Code on GitHub</a></p>
+      <p><a href="https://github.com/mtread/cmsc335-shapes" target="_blank" rel="noopener noreferrer">View Code on GitHub</a></p>
     </div>
 
-    <div class="project">
+    <div class="project" role="article" tabindex="0">
       <h3>JavaScript Pong Game</h3>
       <p>Interactive recreation of Pong built using HTML5 Canvas and JavaScript with simple AI and collision logic.</p>
       <p><strong>Skills:</strong> JavaScript, HTML5 Canvas, Game Logic, UX, GitHub Pages</p>
       <p>
-        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">View Code</a> |
-        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Play the Game</a>
+        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank" rel="noopener noreferrer">View Code</a> |
+        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank" rel="noopener noreferrer">Play the Game</a>
       </p>
     </div>
 
-    <div class="project">
+    <div class="project" role="article" tabindex="0">
       <h3>Coffea Arabica – Brand Website</h3>
       <p>A responsive landing page for a fictional coffee brand showcasing front-end layout and branding.</p>
       <p><strong>Skills:</strong> HTML, CSS, Responsive Design, Branding</p>
-      <p><a href="https://mtread.github.io/coffea-arabica/" target="_blank">View Live Site</a></p>
+      <p><a href="https://mtread.github.io/coffea-arabica/" target="_blank" rel="noopener noreferrer">View Live Site</a></p>
     </div>
   </section>
 
-  <div class="circuit-divider"></div>
+  <div class="circuit-divider" role="presentation"></div>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>
-      Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank">GitHub</a>.
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--text-primary); text-align:center; margin-bottom:24px;">Contact</h2>
+    <p style="text-align:center;">
+      Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank" rel="noopener noreferrer">GitHub</a>.
     </p>
   </section>
 
@@ -265,6 +307,7 @@
 
 </body>
 </html>
+
 
 
 
