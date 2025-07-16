@@ -8,13 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-start: #f7e5eb; /* softer blush pink */
-      --bg-end: #cbb6ef;   /* muted lavender */
-      --text-primary: #444444;
-      --text-secondary: #666666;
+      --bg-dark: #12121f;
+      --bio-bg: #1f1f2e;
+      --text-primary: #cfcfd1;
+      --text-secondary: #a5a5af;
       --accent-pink: #ff90c2;
-      --accent-green: #7fa88e; /* muted leaf green */
-      --card-bg: rgba(255, 255, 255, 0.3);
+      --accent-green: #7fa88e;
+      --card-bg: rgba(31, 31, 46, 0.8);
       --divider: var(--accent-green);
     }
 
@@ -26,7 +26,7 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom right, var(--bg-start), var(--bg-end));
+      background: var(--bg-dark);
       color: var(--text-primary);
       padding: 0 20px 60px;
       min-height: 100vh;
@@ -34,24 +34,11 @@
       overflow-x: hidden;
     }
 
-    /* subtle star pattern with very low opacity */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://www.transparenttextures.com/patterns/stardust.png');
-      opacity: 0.03;
-      z-index: 0;
-      pointer-events: none;
-    }
-
     header, footer {
       text-align: center;
-      padding: 50px 0 20px;
+      padding: 60px 0 20px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     h1 {
@@ -59,41 +46,44 @@
       font-weight: 600;
       font-size: 3.6em;
       position: relative;
-      color: var(--text-primary);
-      letter-spacing: 0.05em;
+      color: var(--accent-pink);
+      letter-spacing: 0.07em;
       margin-bottom: 0.15em;
-      text-shadow: 0 0 4px rgba(0,0,0,0.05);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--accent-pink);
+      animation: typing 3s steps(26, end), blink 0.7s infinite step-end;
       display: inline-block;
-    }
-
-    .flower-orbit {
-      position: absolute;
-      top: -16px;
-      right: -38px;
-      width: 14px;
-      height: 14px;
-      font-size: 18px;
-      animation: orbit 9s linear infinite;
+      max-width: 100%;
+      box-sizing: content-box;
       user-select: none;
     }
 
-    @keyframes orbit {
-      0% { transform: rotate(0deg) translateX(38px) rotate(0deg); }
-      100% { transform: rotate(360deg) translateX(38px) rotate(-360deg); }
+    /* Typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 13.5em }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+      100% { border-color: var(--accent-pink) }
     }
 
     .subtitle {
       font-family: 'Rajdhani', sans-serif;
       font-weight: 300;
       font-size: 1.6em;
-      color: var(--accent-pink);
+      color: var(--text-secondary);
       letter-spacing: 0.1em;
-      margin-bottom: 30px;
-      text-shadow: 0 0 5px var(--accent-pink);
+      margin-bottom: 40px;
+      user-select: none;
     }
 
     nav {
       margin-bottom: 50px;
+      position: relative;
+      z-index: 2;
     }
 
     nav a {
@@ -111,7 +101,7 @@
     nav a:hover,
     nav a:focus {
       background-color: var(--accent-pink);
-      color: white;
+      color: #12121f;
       box-shadow: 0 0 15px var(--accent-pink);
       outline: none;
     }
@@ -120,46 +110,59 @@
       max-width: 750px;
       margin: 0 auto 50px;
       background-color: var(--card-bg);
-      padding: 28px 36px;
+      padding: 32px 38px;
       border-radius: 16px;
       backdrop-filter: blur(14px);
-      box-shadow: 0 0 20px rgba(255 255 255 / 0.12);
+      box-shadow: 0 0 25px rgba(255 144 194, 0.12);
       color: var(--text-primary);
       position: relative;
       z-index: 1;
+      text-align: center;
     }
 
-    section p {
-      font-size: 1.15em;
-      line-height: 1.85;
+    /* Bio section tweaks */
+    #about {
+      background-color: var(--bio-bg);
       color: var(--text-secondary);
+      font-size: 1.2em;
+      line-height: 1.9;
+      text-align: center;
+    }
+
+    #about p {
+      max-width: 670px;
+      margin: 12px auto;
     }
 
     .project {
       text-align: center;
       margin-bottom: 40px;
-      border: 1px solid rgba(255 255 255 / 0.15);
-      box-shadow: 0 0 16px rgba(255 255 255 / 0.10);
+      border: 1px solid rgba(255 144 194 / 0.3);
+      box-shadow: 0 0 20px rgba(255 144 194 / 0.15);
       transition: transform 0.2s ease, box-shadow 0.3s ease;
+      padding: 28px 32px;
+      border-radius: 14px;
+      background: rgba(255 255 255 / 0.07);
     }
 
     .project:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px var(--accent-pink);
+      box-shadow: 0 0 28px var(--accent-pink);
+      background: rgba(255 144 194 / 0.15);
     }
 
     .project h3 {
       font-family: 'Rajdhani', sans-serif;
       font-weight: 600;
       font-size: 1.45em;
-      color: var(--text-primary);
-      margin-bottom: 12px;
+      color: var(--accent-pink);
+      margin-bottom: 14px;
       letter-spacing: 0.04em;
     }
 
     .project p {
       color: var(--text-secondary);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     a {
@@ -208,22 +211,59 @@
     footer {
       font-family: 'Open Sans', sans-serif;
       font-size: 0.85em;
-      color: #555555;
+      color: #777;
       margin-top: 90px;
       position: relative;
       z-index: 1;
+      text-align: center;
     }
+
+    /* Constellation animation container */
+    .constellation {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      z-index: 3;
+    }
+
+    /* dots in constellation */
+    .star {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-pink);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent-pink);
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    /* pulsing animation */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.8); }
+    }
+
+    /* connecting lines */
+    .line {
+      position: absolute;
+      background: var(--accent-pink);
+      opacity: 0.5;
+      border-radius: 2px;
+      animation: pulse 3s infinite ease-in-out alternate;
+    }
+
+    /* Lines positions and sizes */
+    .line1 { top: 8px; left: 16px; width: 48px; height: 2px; }
+    .line2 { top: 8px; left: 16px; transform: rotate(60deg); width: 48px; height: 2px; transform-origin: left; }
+    .line3 { top: 50px; left: 50px; width: 35px; height: 2px; transform: rotate(-45deg); transform-origin: left; }
+    .line4 { top: 40px; left: 12px; width: 38px; height: 2px; transform: rotate(30deg); transform-origin: left; }
 
     @media (max-width: 500px) {
       h1 {
         font-size: 2.8em;
-      }
-      .flower-orbit {
-        right: -28px;
-        top: -12px;
-        font-size: 14px;
-        width: 10px;
-        height: 10px;
+        animation: none;
+        border-right: none;
       }
       nav a {
         margin: 0 10px;
@@ -231,8 +271,21 @@
         font-size: 1em;
       }
       section {
-        padding: 20px 24px;
+        padding: 24px 28px;
         margin-bottom: 40px;
+      }
+      .constellation {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
+      }
+      .star {
+        width: 6px;
+        height: 6px;
+      }
+      .line1, .line2, .line3, .line4 {
+        width: 36px;
+        height: 1.5px;
       }
     }
   </style>
@@ -240,10 +293,17 @@
 <body>
 
   <header>
-    <h1>
-      Mackenzie Treadway
-      <div class="flower-orbit" aria-hidden="true">🌸</div>
-    </h1>
+    <div class="constellation" aria-hidden="true">
+      <div class="star" style="top: 8px; left: 8px;"></div>
+      <div class="star" style="top: 8px; left: 56px;"></div>
+      <div class="star" style="top: 50px; left: 50px;"></div>
+      <div class="star" style="top: 40px; left: 12px;"></div>
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+      <div class="line line4"></div>
+    </div>
+    <h1>Mackenzie Treadway</h1>
     <div class="subtitle" aria-label="Aspiring Software Engineer">Aspiring Software Engineer</div>
     <nav role="navigation" aria-label="Primary navigation">
       <a href="#about">About</a>
@@ -253,19 +313,22 @@
   </header>
 
   <section id="about" aria-labelledby="about-heading">
-    <h2 id="about-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--text-primary); text-align:center; margin-bottom:24px;">About Me</h2>
+    <h2 id="about-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--accent-pink); text-align:center; margin-bottom:28px;">About Me</h2>
     <p>
-      I am a senior Computer Science student with a minor in Art, driven by a passion for building efficient, scalable software solutions that solve real-world problems. I have hands-on experience in object-oriented programming, front-end development, and collaborative projects using agile methodologies.
+      I am a senior Computer Science student with a minor in Art, passionate about building efficient, scalable software solutions that solve real-world problems. Since high school, I have pursued computer science courses that strengthened my foundation in algorithms, data structures, and programming languages.
     </p>
     <p>
-      I thrive in fast-paced, team-oriented environments where creativity and problem-solving are essential. I am eager to contribute to innovative software engineering teams, continuously grow my skills, and deliver high-quality products that impact users positively.
+      For the past year, I have taught enrichment STEM classes to children, covering topics such as drone coding and 3D printing, honing my communication and leadership skills while fostering creativity and technical curiosity in others.
+    </p>
+    <p>
+      I thrive in collaborative, fast-paced environments where creative problem solving and continuous learning are essential. I am eager to contribute to innovative software engineering teams, delivering high-quality products that positively impact users.
     </p>
   </section>
 
   <div class="circuit-divider" role="presentation"></div>
 
   <section id="projects" aria-labelledby="projects-heading">
-    <h2 id="projects-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--text-primary); text-align:center; margin-bottom:36px;">Projects</h2>
+    <h2 id="projects-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--accent-pink); text-align:center; margin-bottom:36px;">Projects</h2>
 
     <div class="project" role="article" tabindex="0">
       <h3>Java Object-Oriented Shapes Program</h3>
@@ -295,7 +358,7 @@
   <div class="circuit-divider" role="presentation"></div>
 
   <section id="contact" aria-labelledby="contact-heading">
-    <h2 id="contact-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--text-primary); text-align:center; margin-bottom:24px;">Contact</h2>
+    <h2 id="contact-heading" style="font-family:'Rajdhani',sans-serif; font-weight:600; color:var(--accent-pink); text-align:center; margin-bottom:24px;">Contact</h2>
     <p style="text-align:center;">
       Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank" rel="noopener noreferrer">GitHub</a>.
     </p>
@@ -307,6 +370,7 @@
 
 </body>
 </html>
+
 
 
 
