@@ -8,11 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0b0c10;
-      --text: #f8f8f8;
-      --accent: #ff69b4;
-      --card: #1f1f28;
-      --link-hover: #ff85c1;
+      --bg: #0a0a0f;
+      --text: #ffffff;
+      --accent-pink: #ff69b4;
+      --accent-pink-light: #ff8ecf;
+      --accent-pink-glow: #ffb6e5;
+      --card-bg: #1a1a25;
+      --divider-pink: #ff5ca0;
     }
 
     * {
@@ -30,90 +32,105 @@
 
     header, footer {
       text-align: center;
-      padding: 40px 0 20px;
+      padding: 50px 0 20px;
     }
 
     h1 {
-      font-size: 3em;
-      color: var(--accent);
-      text-shadow: 0 0 2px var(--accent), 0 0 4px var(--accent);
+      font-size: 3.5em;
+      color: var(--accent-pink);
+      text-shadow: 0 0 4px var(--accent-pink-glow), 0 0 10px var(--accent-pink);
     }
 
     h2 {
-      color: var(--link-hover);
-      margin-top: 10px;
+      color: var(--accent-pink-light);
+      margin-top: 12px;
+      font-size: 1.5em;
     }
 
     nav {
-      margin: 15px 0 30px;
+      margin: 25px 0 40px;
     }
 
     nav a {
-      margin: 0 12px;
+      margin: 0 16px;
       text-decoration: none;
       color: var(--text);
       font-weight: bold;
-      transition: color 0.3s ease;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--accent);
+      background-color: var(--accent-pink-light);
+      color: var(--bg);
+      box-shadow: 0 0 8px var(--accent-pink-glow);
     }
 
     .bio, .contact {
-      max-width: 700px;
-      margin: 0 auto 40px;
+      max-width: 750px;
+      margin: 0 auto 50px;
       text-align: center;
-      font-size: 1.1em;
-      line-height: 1.8;
-      background-color: var(--card);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+      font-size: 1.15em;
+      line-height: 1.9;
+      background-color: var(--card-bg);
+      padding: 25px 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.15);
     }
 
     .project {
-      background-color: var(--card);
-      border: 1px solid #3a3a3a;
-      padding: 20px;
-      margin: 0 auto 25px;
-      border-radius: 12px;
-      max-width: 700px;
+      background-color: var(--card-bg);
+      border: 1px solid #3c3c3c;
+      padding: 25px 30px;
+      margin: 0 auto 35px;
+      border-radius: 14px;
+      max-width: 750px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(255, 105, 180, 0.1);
+      box-shadow: 0 0 14px rgba(255, 105, 180, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 18px rgba(255, 105, 180, 0.25);
     }
 
     .project h3 {
-      color: var(--accent);
-      margin-bottom: 10px;
+      color: var(--accent-pink);
+      margin-bottom: 12px;
+      font-size: 1.4em;
     }
 
     a {
-      color: var(--accent);
+      color: var(--accent-pink);
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     a:hover {
-      color: var(--link-hover);
+      color: var(--accent-pink-light);
     }
 
     .circuit-divider {
-      height: 2px;
-      background: linear-gradient(to right, transparent, var(--accent), transparent);
-      margin: 60px auto;
-      max-width: 80%;
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--divider-pink), transparent);
+      margin: 70px auto;
+      max-width: 85%;
       position: relative;
+      border-radius: 2px;
     }
 
     .circuit-divider::before,
     .circuit-divider::after {
       content: "";
       position: absolute;
-      top: -5px;
-      width: 10px;
-      height: 10px;
-      background: var(--accent);
+      top: -6px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent-pink-light);
       border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent-pink-glow);
     }
 
     .circuit-divider::before {
@@ -126,8 +143,8 @@
 
     footer {
       font-size: 0.85em;
-      color: #888;
-      margin-top: 60px;
+      color: #aaa;
+      margin-top: 80px;
     }
   </style>
 </head>
@@ -195,3 +212,4 @@
 
 </body>
 </html>
+
