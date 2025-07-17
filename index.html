@@ -2,107 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mackenzie Treadway Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Mackenzie Treadway, an aspiring software engineer with a love for elegant code and charming design." />
+  <title>Mackenzie Treadway - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Raleway:wght@300;600&display=swap" rel="stylesheet" />
   <style>
-    body {
+    :root {
+      --bg: #fff9f4;
+      --text-primary: #3a3a3a;
+      --text-secondary: #6c6c6c;
+      --accent: #f2b5d4;
+      --card-bg: #ffffff;
+      --divider: #f7d7e1;
+    }
+
+    * {
       margin: 0;
-      font-family: 'Caveat', cursive;
-      background-color: #0d0d0d;
-      color: #f2b5d4;
-      padding: 0 1rem;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      padding: 0 20px 60px;
     }
 
     header {
       text-align: center;
-      padding: 2rem 1rem 1rem;
+      padding: 60px 0 30px;
     }
 
-    svg {
-      width: 100%;
-      max-width: 800px;
-      height: 100px;
-      display: block;
-      margin: 0 auto;
+    .handwriting-name {
+      font-family: 'Caveat', cursive;
+      font-size: 3em;
+      color: var(--accent);
+      opacity: 0;
+      animation: handwriting 4s ease forwards;
+      white-space: nowrap;
     }
 
-    text.handwritten {
-      font-size: 48px;
-      fill: none;
-      stroke: #f2b5d4;
-      stroke-width: 1.5px;
-      stroke-dasharray: 800;
-      stroke-dashoffset: 800;
-      animation: draw 4s ease forwards;
-    }
-
-    @keyframes draw {
-      to {
+    @keyframes handwriting {
+      0% {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
         stroke-dashoffset: 0;
+        opacity: 1;
       }
     }
 
     .subtitle {
-      font-size: 1.5rem;
-      color: #f7cfe3;
-      margin-top: 1rem;
-      letter-spacing: 1px;
+      font-weight: 300;
+      font-size: 1.4em;
+      color: var(--text-secondary);
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
 
     nav {
-      margin-top: 2rem;
+      margin-bottom: 40px;
     }
 
     nav a {
-      color: #ffffff;
+      font-weight: 600;
+      color: var(--text-primary);
       text-decoration: none;
-      margin: 0 15px;
-      padding: 8px 16px;
-      border-radius: 5px;
-      background-color: #1a1a1a;
-      transition: background-color 0.3s, box-shadow 0.3s;
+      font-size: 1.05em;
+      margin: 0 14px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.3s;
     }
 
     nav a:hover {
-      background-color: #ff87b4;
-      box-shadow: 0 0 10px #ff87b4;
+      background-color: var(--accent);
+      color: white;
     }
 
     section {
-      margin: 3rem auto;
-      max-width: 800px;
-      line-height: 1.6;
+      max-width: 760px;
+      margin: 0 auto 50px;
+      background-color: var(--card-bg);
+      padding: 36px 40px;
+      border-radius: 14px;
+      box-shadow: 0 0 20px rgba(242, 181, 212, 0.12);
     }
 
-    h2 {
-      color: #fcb0d2;
-      border-bottom: 2px solid #ff87b4;
-      padding-bottom: 0.5rem;
+    #about {
+      background-color: #fff1f6;
+      text-align: center;
     }
 
-    ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
+    #about p {
+      font-size: 1.15em;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    .project {
+      border: 2px dashed #f5cadd;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      background-color: #fff9fc;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+    }
+
+    .project h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      color: #e295b5;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: var(--text-secondary);
+    }
+
+    a {
+      color: #da77a3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .circuit-divider {
+      height: 3px;
+      background: var(--divider);
+      margin: 60px auto;
+      max-width: 85%;
+      border-radius: 3px;
     }
 
     footer {
+      font-size: 0.9em;
       text-align: center;
-      margin: 4rem 0 2rem;
-      color: #aaaaaa;
-      font-size: 0.9rem;
+      color: #999;
+      margin-top: 80px;
     }
-
   </style>
 </head>
 <body>
 
   <header>
-    <svg viewBox="0 0 800 100">
-      <text x="50%" y="60%" text-anchor="middle" class="handwritten">
-        Hey, Mackenzie here!
-      </text>
-    </svg>
+    <div class="handwriting-name">Hey, Mackenzie here!</div>
     <div class="subtitle">Aspiring Software Engineer</div>
     <nav>
       <a href="#about">About</a>
@@ -112,30 +169,59 @@
   </header>
 
   <section id="about">
-    <h2>About Me</h2>
+    <h2 style="color: #e295b5;">About Me</h2>
     <p>
-      I'm a Computer Science student with a passion for system design, game mechanics, and clean code.
-      I love teaching others, exploring real-time systems, and developing creative software solutions.
+      I'm a senior Computer Science student with a minor in Art, passionate about building elegant, efficient software solutions. Since high school, I’ve developed a strong foundation in data structures, algorithms, and full-stack development through both coursework and personal projects.
+    </p>
+    <p>
+      I bring experience working in collaborative environments, leading technical initiatives, and explaining complex ideas clearly — skills that make me a strong contributor in fast-paced engineering teams.
+    </p>
+    <p>
+      I’m seeking a software engineering role where I can continue to grow, solve meaningful problems, and create tools that improve the lives of users.
     </p>
   </section>
 
+  <div class="circuit-divider"></div>
+
   <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Java OOP Shape Calculator:</strong> Command-line app using inheritance and polymorphism to calculate area/volume of geometric shapes.</li>
-      <li><strong>JavaScript Pong Game:</strong> Interactive browser game with real-time collision detection and canvas rendering.</li>
-      <li><strong>Coffea Arabica Website:</strong> Responsive landing page for a fictional coffee brand with clean layout and visual branding.</li>
-    </ul>
+    <h2 style="color: #e295b5; text-align:center; margin-bottom:30px;">Projects</h2>
+
+    <div class="project">
+      <h3>Java Object-Oriented Shapes Program</h3>
+      <p>CLI-based shape calculator demonstrating object-oriented design with inheritance and polymorphism.</p>
+      <p><strong>Skills:</strong> Java, OOP, CLI, Inheritance, Polymorphism</p>
+      <p><a href="https://github.com/mtread/cmsc335-shapes" target="_blank">View Code on GitHub</a></p>
+    </div>
+
+    <div class="project">
+      <h3>JavaScript Pong Game</h3>
+      <p>Interactive recreation of Pong built using HTML5 Canvas and JavaScript with simple AI and collision logic.</p>
+      <p><strong>Skills:</strong> JavaScript, HTML5 Canvas, Game Logic, UX, GitHub Pages</p>
+      <p>
+        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">View Code</a> |
+        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Play the Game</a>
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Coffea Arabica – Brand Website</h3>
+      <p>A responsive landing page for a fictional coffee brand showcasing front-end layout and branding.</p>
+      <p><strong>Skills:</strong> HTML, CSS, Responsive Design, Branding</p>
+      <p><a href="https://mtread.github.io/coffea-arabica/" target="_blank">View Live Site</a></p>
+    </div>
   </section>
 
+  <div class="circuit-divider"></div>
+
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: mtread03@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/mtread" style="color:#ffb8dc;">@mtread</a></p>
+    <h2 style="color: #e295b5; text-align:center;">Contact</h2>
+    <p style="text-align:center;">
+      Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank">GitHub</a>.
+    </p>
   </section>
 
   <footer>
-    &copy; 2025 Mackenzie Treadway. All rights reserved.
+    &copy; 2025 Mackenzie Treadway
   </footer>
 
 </body>
