@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Mackenzie Treadway, an aspiring software engineer passionate about building efficient and elegant solutions." />
+  <meta name="description" content="Portfolio of Mackenzie Treadway, an aspiring software engineer with a love for elegant code and charming design." />
   <title>Mackenzie Treadway - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Raleway:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0e1116;
-      --text-primary: #d8dee9;
-      --text-secondary: #7e899a;
-      --accent: #56c7c1;
-      --divider: #47b6c8;
-      --bio-bg: #181b22;
-      --card-bg: rgba(28, 31, 38, 0.9);
+      --bg: #fff9f4;
+      --text-primary: #3a3a3a;
+      --text-secondary: #6c6c6c;
+      --accent: #f2b5d4;
+      --card-bg: #ffffff;
+      --divider: #f7d7e1;
     }
 
     * {
@@ -24,7 +23,7 @@
     }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Raleway', sans-serif;
       background: var(--bg);
       color: var(--text-primary);
       padding: 0 20px 60px;
@@ -32,43 +31,34 @@
 
     header {
       text-align: center;
-      padding: 60px 0 20px;
-      position: relative;
+      padding: 60px 0 30px;
     }
 
-    /* New SVG container styling */
-    .circuit-svg {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 20px;
-      filter: drop-shadow(0 0 6px var(--accent));
-      /* subtle glow */
-    }
-
-    .typed-name {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 600;
-      font-size: 2.6em;
+    .handwriting-name {
+      font-family: 'Caveat', cursive;
+      font-size: 3em;
       color: var(--accent);
+      opacity: 0;
+      animation: handwriting 4s ease forwards;
       white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid var(--accent);
-      width: 0;
-      margin: 0 auto 20px;
-      animation: typing 3s steps(25, end) forwards, blinkCursor 0.7s step-end infinite;
     }
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 20ch; }
-    }
-
-    @keyframes blinkCursor {
-      50% { border-color: transparent; }
+    @keyframes handwriting {
+      0% {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
     }
 
     .subtitle {
-      font-family: 'Rajdhani', sans-serif;
       font-weight: 300;
       font-size: 1.4em;
       color: var(--text-secondary);
@@ -77,7 +67,7 @@
     }
 
     nav {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
     nav a {
@@ -88,26 +78,25 @@
       margin: 0 14px;
       padding: 8px 12px;
       border-radius: 6px;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
 
     nav a:hover {
       background-color: var(--accent);
-      color: #0e1116;
+      color: white;
     }
 
     section {
-      max-width: 740px;
+      max-width: 760px;
       margin: 0 auto 50px;
       background-color: var(--card-bg);
-      padding: 32px 36px;
+      padding: 36px 40px;
       border-radius: 14px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 20px rgba(86, 199, 193, 0.12);
+      box-shadow: 0 0 20px rgba(242, 181, 212, 0.12);
     }
 
     #about {
-      background-color: var(--bio-bg);
+      background-color: #fff1f6;
       text-align: center;
     }
 
@@ -119,24 +108,23 @@
     }
 
     .project {
-      border: 1px solid rgba(86, 199, 193, 0.25);
+      border: 2px dashed #f5cadd;
       padding: 24px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 30px;
-      transition: 0.3s;
-      background-color: rgba(255, 255, 255, 0.03);
+      background-color: #fff9fc;
+      transition: transform 0.3s ease;
     }
 
     .project:hover {
-      box-shadow: 0 0 20px var(--accent);
-      transform: translateY(-4px);
+      transform: translateY(-6px);
     }
 
     .project h3 {
-      font-family: 'Rajdhani', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 12px;
+      color: #e295b5;
+      margin-bottom: 10px;
     }
 
     .project p {
@@ -144,13 +132,12 @@
     }
 
     a {
-      color: var(--accent);
+      color: #da77a3;
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
-      color: #8ef2eb;
     }
 
     .circuit-divider {
@@ -159,32 +146,12 @@
       margin: 60px auto;
       max-width: 85%;
       border-radius: 3px;
-      position: relative;
-    }
-
-    .circuit-divider::before,
-    .circuit-divider::after {
-      content: "";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: var(--divider);
-      border-radius: 50%;
-      top: -4px;
-    }
-
-    .circuit-divider::before {
-      left: 0;
-    }
-
-    .circuit-divider::after {
-      right: 0;
     }
 
     footer {
       font-size: 0.9em;
       text-align: center;
-      color: #555;
+      color: #999;
       margin-top: 80px;
     }
   </style>
@@ -192,26 +159,7 @@
 <body>
 
   <header>
-    <!-- Minimal SVG Circuit -->
-    <svg class="circuit-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-      <!-- Circle nodes -->
-      <circle cx="50" cy="50" r="6" fill="var(--accent)" />
-      <circle cx="30" cy="30" r="4" fill="var(--accent)" />
-      <circle cx="70" cy="30" r="4" fill="var(--accent)" />
-      <circle cx="30" cy="70" r="4" fill="var(--accent)" />
-      <circle cx="70" cy="70" r="4" fill="var(--accent)" />
-      <!-- Lines connecting nodes -->
-      <line x1="50" y1="50" x2="30" y2="30" stroke="var(--accent)" stroke-width="1.5" />
-      <line x1="50" y1="50" x2="70" y2="30" stroke="var(--accent)" stroke-width="1.5" />
-      <line x1="50" y1="50" x2="30" y2="70" stroke="var(--accent)" stroke-width="1.5" />
-      <line x1="50" y1="50" x2="70" y2="70" stroke="var(--accent)" stroke-width="1.5" />
-      <line x1="30" y1="30" x2="70" y2="30" stroke="var(--accent)" stroke-width="0.7" />
-      <line x1="30" y1="70" x2="70" y2="70" stroke="var(--accent)" stroke-width="0.7" />
-      <line x1="30" y1="30" x2="30" y2="70" stroke="var(--accent)" stroke-width="0.7" />
-      <line x1="70" y1="30" x2="70" y2="70" stroke="var(--accent)" stroke-width="0.7" />
-    </svg>
-
-    <div class="typed-name">Hey, Mackenzie here!</div>
+    <div class="handwriting-name">Hey, Mackenzie here!</div>
     <div class="subtitle">Aspiring Software Engineer</div>
     <nav>
       <a href="#about">About</a>
@@ -221,7 +169,7 @@
   </header>
 
   <section id="about">
-    <h2 style="color: var(--accent); font-family:'Rajdhani',sans-serif;">About Me</h2>
+    <h2 style="color: #e295b5;">About Me</h2>
     <p>
       I'm a senior Computer Science student with a minor in Art, passionate about building elegant, efficient software solutions. Since high school, I’ve developed a strong foundation in data structures, algorithms, and full-stack development through both coursework and personal projects.
     </p>
@@ -236,13 +184,13 @@
   <div class="circuit-divider"></div>
 
   <section id="projects">
-    <h2 style="color: var(--accent); font-family:'Rajdhani',sans-serif; text-align:center; margin-bottom:30px;">Projects</h2>
+    <h2 style="color: #e295b5; text-align:center; margin-bottom:30px;">Projects</h2>
 
     <div class="project">
       <h3>Java Object-Oriented Shapes Program</h3>
       <p>CLI-based shape calculator demonstrating object-oriented design with inheritance and polymorphism.</p>
       <p><strong>Skills:</strong> Java, OOP, CLI, Inheritance, Polymorphism</p>
-      <p><a href="https://github.com/mtread/cmsc335-shapes" target="_blank" rel="noopener noreferrer">View Code on GitHub</a></p>
+      <p><a href="https://github.com/mtread/cmsc335-shapes" target="_blank">View Code on GitHub</a></p>
     </div>
 
     <div class="project">
@@ -250,8 +198,8 @@
       <p>Interactive recreation of Pong built using HTML5 Canvas and JavaScript with simple AI and collision logic.</p>
       <p><strong>Skills:</strong> JavaScript, HTML5 Canvas, Game Logic, UX, GitHub Pages</p>
       <p>
-        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank" rel="noopener noreferrer">View Code</a> |
-        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank" rel="noopener noreferrer">Play the Game</a>
+        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">View Code</a> |
+        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Play the Game</a>
       </p>
     </div>
 
@@ -259,16 +207,16 @@
       <h3>Coffea Arabica – Brand Website</h3>
       <p>A responsive landing page for a fictional coffee brand showcasing front-end layout and branding.</p>
       <p><strong>Skills:</strong> HTML, CSS, Responsive Design, Branding</p>
-      <p><a href="https://mtread.github.io/coffea-arabica/" target="_blank" rel="noopener noreferrer">View Live Site</a></p>
+      <p><a href="https://mtread.github.io/coffea-arabica/" target="_blank">View Live Site</a></p>
     </div>
   </section>
 
   <div class="circuit-divider"></div>
 
   <section id="contact">
-    <h2 style="color: var(--accent); font-family:'Rajdhani',sans-serif; text-align:center;">Contact</h2>
+    <h2 style="color: #e295b5; text-align:center;">Contact</h2>
     <p style="text-align:center;">
-      Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank" rel="noopener noreferrer">GitHub</a>.
+      Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank">GitHub</a>.
     </p>
   </section>
 
