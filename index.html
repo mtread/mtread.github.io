@@ -3,155 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Mackenzie Treadway, an aspiring software engineer with a love for elegant code and charming design." />
   <title>Mackenzie Treadway - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Raleway:wght@300;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Raleway:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #fff9f4;
-      --text-primary: #3a3a3a;
-      --text-secondary: #6c6c6c;
-      --accent: #f2b5d4;
-      --card-bg: #ffffff;
-      --divider: #f7d7e1;
+      --bg: #fdfdf9;
+      --matcha: #c5e3c4;
+      --pink: #f3c2ce;
+      --text: #444;
+      --link: #ce8ea8;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Raleway', sans-serif;
       background: var(--bg);
-      color: var(--text-primary);
-      padding: 0 20px 60px;
+      color: var(--text);
+      padding-bottom: 60px;
     }
 
     header {
       text-align: center;
-      padding: 60px 0 30px;
+      padding: 60px 20px 20px;
     }
 
     .handwriting-name {
       font-family: 'Caveat', cursive;
-      font-size: 3em;
-      color: var(--accent);
-      opacity: 0;
-      animation: handwriting 4s ease forwards;
-      white-space: nowrap;
+      font-size: 3.5em;
+      color: var(--pink);
+      animation: fadeIn 2.5s ease-in-out;
     }
 
-    @keyframes handwriting {
-      0% {
-        stroke-dasharray: 500;
-        stroke-dashoffset: 500;
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        stroke-dashoffset: 0;
-        opacity: 1;
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .subtitle {
       font-weight: 300;
-      font-size: 1.4em;
-      color: var(--text-secondary);
-      margin-top: 10px;
-      margin-bottom: 40px;
+      font-size: 1.3em;
+      color: #666;
+      margin-top: 6px;
     }
 
     nav {
-      margin-bottom: 40px;
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      padding: 14px 0;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid #eee;
+      z-index: 10;
     }
 
     nav a {
-      font-weight: 600;
-      color: var(--text-primary);
+      margin: 0 18px;
+      color: var(--text);
       text-decoration: none;
-      font-size: 1.05em;
-      margin: 0 14px;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background 0.3s;
+      font-weight: 600;
+      font-size: 1em;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      background-color: var(--accent);
-      color: white;
+      color: var(--link);
     }
 
     section {
-      max-width: 760px;
-      margin: 0 auto 50px;
-      background-color: var(--card-bg);
-      padding: 36px 40px;
-      border-radius: 14px;
-      box-shadow: 0 0 20px rgba(242, 181, 212, 0.12);
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    #about {
-      background-color: #fff1f6;
+    h2 {
       text-align: center;
+      color: var(--link);
+      margin-bottom: 20px;
     }
 
     #about p {
-      font-size: 1.15em;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 18px;
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      color: #555;
     }
 
-    .project {
-      border: 2px dashed #f5cadd;
-      padding: 24px;
+    #projects {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 12px;
+    }
+
+    .project-card {
+      display: inline-block;
+      vertical-align: top;
+      background: white;
       border-radius: 12px;
-      margin-bottom: 30px;
-      background-color: #fff9fc;
+      margin-right: 20px;
+      width: 270px;
+      padding: 20px;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       transition: transform 0.3s ease;
     }
 
-    .project:hover {
-      transform: translateY(-6px);
+    .project-card:hover {
+      transform: translateY(-5px);
     }
 
-    .project h3 {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 600;
-      color: #e295b5;
+    .project-card h3 {
+      color: var(--link);
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 0.95em;
       margin-bottom: 10px;
     }
 
-    .project p {
-      color: var(--text-secondary);
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
     }
 
-    a {
-      color: #da77a3;
-      text-decoration: none;
+    .contact-icons a svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--text);
+      transition: fill 0.3s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .circuit-divider {
-      height: 3px;
-      background: var(--divider);
-      margin: 60px auto;
-      max-width: 85%;
-      border-radius: 3px;
+    .contact-icons a:hover svg {
+      fill: var(--link);
     }
 
     footer {
-      font-size: 0.9em;
+      font-size: 0.85em;
       text-align: center;
-      color: #999;
+      color: #aaa;
       margin-top: 80px;
     }
   </style>
@@ -159,79 +157,74 @@
 <body>
 
   <header>
-    <div class="handwriting-name">Hey, Mackenzie here!</div>
+    <div class="handwriting-name">Hey, I'm Mackenzie!</div>
     <div class="subtitle">Aspiring Software Engineer</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <section id="about">
-    <h2 style="color: #e295b5;">About Me</h2>
+    <h2>About Me</h2>
     <p>
-      I'm a senior Computer Science student with a minor in Art, passionate about building elegant, efficient software solutions. Since high school, I’ve developed a strong foundation in data structures, algorithms, and full-stack development through both coursework and personal projects.
-    </p>
-    <p>
-      I bring experience working in collaborative environments, leading technical initiatives, and explaining complex ideas clearly — skills that make me a strong contributor in fast-paced engineering teams.
+      I'm a senior Computer Science student with a minor in Art, passionate about building elegant, efficient software solutions. I bring experience working in collaborative environments, leading technical initiatives, and explaining complex ideas clearly — skills that make me a strong contributor in fast-paced engineering teams.
     </p>
     <p>
       I’m seeking a software engineering role where I can continue to grow, solve meaningful problems, and create tools that improve the lives of users.
     </p>
   </section>
 
-  <div class="circuit-divider"></div>
-
   <section id="projects">
-    <h2 style="color: #e295b5; text-align:center; margin-bottom:30px;">Projects</h2>
+    <h2>Projects</h2>
 
-    <div class="project">
-  <h3>Flappy Bird Clone</h3>
-  <p>A simple Flappy Bird-style game built using HTML5 Canvas and JavaScript.</p>
-  <p><strong>Skills:</strong> JavaScript, HTML5 Canvas, Game Logic, UX, GitHub Pages</p>
-  <p>
-    <a href="https://github.com/mtread/flappy-bird-js" target="_blank">View Code on GitHub</a> |
-    <a href="https://mtread.github.io/flappy-bird-js/" target="_blank">Play the Game</a>
-  </p>
-</div>
-
-    <div class="project">
-      <h3>Java Object-Oriented Shapes Program</h3>
-      <p>CLI-based shape calculator demonstrating object-oriented design with inheritance and polymorphism.</p>
-      <p><strong>Skills:</strong> Java, OOP, CLI, Inheritance, Polymorphism</p>
-      <p><a href="https://github.com/mtread/cmsc335-shapes" target="_blank">View Code on GitHub</a></p>
+    <div class="project-card">
+      <h3>Flappy Bird Clone</h3>
+      <p>HTML5 Canvas game mimicking Flappy Bird mechanics with collision and score logic.</p>
+      <a href="https://github.com/mtread/flappy-bird-js" target="_blank">GitHub</a> |
+      <a href="https://mtread.github.io/flappy-bird-js/" target="_blank">Live Demo</a>
     </div>
 
-    <div class="project">
+    <div class="project-card">
+      <h3>Shapes Calculator (Java)</h3>
+      <p>CLI-based OOP program for calculating geometric shapes using polymorphism.</p>
+      <a href="https://github.com/mtread/cmsc335-shapes" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project-card">
       <h3>JavaScript Pong Game</h3>
-      <p>Interactive recreation of Pong built using HTML5 Canvas and JavaScript with simple AI and collision logic.</p>
-      <p><strong>Skills:</strong> JavaScript, HTML5 Canvas, Game Logic, UX, GitHub Pages</p>
-      <p>
-        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">View Code</a> |
-        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Play the Game</a>
-      </p>
+      <p>Classic Pong game with basic AI, collision detection, and user input handling.</p>
+      <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">GitHub</a> |
+      <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Live Demo</a>
     </div>
 
-    <div class="project">
-      <h3>Coffea Arabica – Brand Website</h3>
-      <p>A responsive landing page for a fictional coffee brand showcasing front-end layout and branding.</p>
-      <p><strong>Skills:</strong> HTML, CSS, Responsive Design, Branding</p>
-      <p><a href="https://mtread.github.io/coffea-arabica/" target="_blank">View Live Site</a></p>
+    <div class="project-card">
+      <h3>Coffea Arabica Website</h3>
+      <p>A fictional coffee brand landing page showcasing front-end layout skills.</p>
+      <a href="https://mtread.github.io/coffea-arabica/" target="_blank">View Site</a>
     </div>
+
   </section>
 
-  <div class="circuit-divider"></div>
-
   <section id="contact">
-    <h2 style="color: #e295b5; text-align:center;">Contact</h2>
-    <p style="text-align:center;">
-      Let's connect! Reach out at <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a> or check out my <a href="https://github.com/mtread" target="_blank">GitHub</a>.
-    </p>
+    <h2>Contact</h2>
+    <div class="contact-icons">
+      <a href="https://github.com/mtread" target="_blank" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.7 2 .7 2 1.5.2 3-.4 3-.4l.4-.8c.7-.1 1.5-.3 2.2-.5l.6-1c.6-.8.6-1.5.6-2.1 0-1.2-.4-2-1-2.5 0-.3.3-1 .2-2.1 0 0-.8-.2-2.3 1-.6-.2-1.3-.4-2-.4-.7 0-1.4.1-2 .4-1.5-1.2-2.3-1-2.3-1-.2 1.1.2 1.8.2 2.1-.6.5-1 1.3-1 2.5 0 .6 0 1.2.6 2.1l.6 1c.8.3 1.6.4 2.2.5l.4.8c0 .5.2.9.8.6A12 12 0 0012 .3"></path></svg>
+      </a>
+      <a href="mailto:mtread03@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M12 12.713L.545 3.3A2 2 0 012.003 2h19.994a2 2 0 011.458 1.3L12 12.713zM12 14.83L2.003 4H2v16h20V4h-.003L12 14.83z"></path></svg>
+      </a>
+      <a href="https://linkedin.com/in/mtread" target="_blank" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.568c0-1.327-.026-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.939v5.666H9.352V9h3.413v1.561h.05c.476-.9 1.635-1.85 3.367-1.85 3.6 0 4.263 2.368 4.263 5.452v6.289zM5.337 7.433a2.062 2.062 0 110-4.125 2.062 2.062 0 010 4.125zM6.716 20.452H3.958V9h2.758v11.452zM22.225 0H1.771C.791 0 0 .771 0 1.723v20.555C0 23.23.791 24 1.771 24h20.451C23.205 24 24 23.23 24 22.278V1.723C24 .771 23.205 0 22.225 0z"/></svg>
+      </a>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 Mackenzie Treadway
+    &copy; 2025 Mackenzie Treadway — All Rights Reserved
   </footer>
 
 </body>
