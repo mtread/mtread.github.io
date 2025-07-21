@@ -102,6 +102,17 @@
       padding-bottom: 12px;
     }
 
+    .project-row {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.project-row .project-card {
+  display: inline-block;
+}
+    
     .project-card {
       display: inline-block;
       vertical-align: top;
@@ -197,31 +208,42 @@
   <section id="projects">
     <h2>Projects</h2>
 
+    <section id="projects">
+  <h2>Projects</h2>
+
+  <h3 style="margin: 20px 0 10px; color: var(--text);">Games with Live Demos</h3>
+  <div class="project-row">
     <div class="project-card">
       <h3>Flappy Bird Clone</h3>
       <p>HTML5 Canvas game mimicking Flappy Bird mechanics with collision and score logic.</p>
-      <a href="https://github.com/mtread/flappy-bird-js" target="_blank" rel="noopener noreferrer">GitHub</a> |
-      <a href="https://mtread.github.io/flappy-bird-js/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Shapes Calculator (Java)</h3>
-      <p>CLI-based OOP program for calculating geometric shapes using polymorphism.</p>
-      <a href="https://github.com/mtread/cmsc335-shapes" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/mtread/flappy-bird-js" target="_blank">GitHub</a> |
+      <a href="https://mtread.github.io/flappy-bird-js/" target="_blank">Live Demo</a>
     </div>
 
     <div class="project-card">
       <h3>JavaScript Pong Game</h3>
       <p>Classic Pong game with basic AI, collision detection, and user input handling.</p>
-      <a href="https://github.com/mtread/cmst290-pong-game" target="_blank" rel="noopener noreferrer">GitHub</a> |
-      <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+      <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">GitHub</a> |
+      <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Live Demo</a>
+    </div>
+  </div>
+
+  <h3 style="margin: 30px 0 10px; color: var(--text);">Other Development Projects</h3>
+  <div class="project-row">
+    <div class="project-card">
+      <h3>Shapes Calculator (Java)</h3>
+      <p>CLI-based OOP program for calculating geometric shapes using polymorphism.</p>
+      <a href="https://github.com/mtread/cmsc335-shapes" target="_blank">GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>Coffea Arabica Website</h3>
       <p>A fictional coffee brand landing page showcasing front-end layout skills.</p>
-      <a href="https://mtread.github.io/coffea-arabica/" target="_blank" rel="noopener noreferrer">View Site</a>
+      <a href="https://mtread.github.io/coffea-arabica/" target="_blank">View Site</a>
     </div>
+  </div>
+</section>
+
 
   </section>
 
