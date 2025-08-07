@@ -2,114 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mackenzie Treadway | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Rochester&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #1b1f1d;
-      --text: #f5f5f5;
-      --accent: #a8d5ba;
-      --accent-light: #d7f2e3;
-      --card: #2c2f2e;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Caveat&display=swap');
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: 'Raleway', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: #1c1c1c;
+      color: #fefefe;
       line-height: 1.6;
-      padding: 2rem;
+      padding: 20px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 40px;
     }
 
     header h1 {
-      font-family: 'Rochester', cursive;
+      font-family: 'Caveat', cursive;
       font-size: 3rem;
-      color: var(--accent-light);
-    }
-
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      color: var(--accent);
+      color: #f5a97f;
+      animation: fadeIn 2s ease-in-out;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      margin-bottom: 2rem;
-      gap: 2rem;
+      margin-top: 10px;
     }
 
     nav a {
-      color: var(--accent-light);
+      color: #fefefe;
       text-decoration: none;
-      font-weight: 600;
-      border-bottom: 2px solid transparent;
-      transition: 0.3s;
+      margin: 0 15px;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      border-color: var(--accent-light);
+      color: #f5a97f;
     }
 
     section {
-      max-width: 900px;
-      margin: 0 auto 3rem;
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+      padding: 20px;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(245, 169, 127, 0.3);
     }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.25rem;
+      color: #f5a97f;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
     }
 
-    .project {
-      background-color: var(--card);
-      padding: 1rem;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 10px rgba(168, 213, 186, 0.1);
+    ul {
+      list-style-type: none;
     }
 
-    .project h3 {
-      color: var(--accent-light);
-      margin-bottom: 0.5rem;
+    li {
+      margin-bottom: 15px;
     }
 
-    .project p {
-      margin-bottom: 0.5rem;
+    a {
+      color: #f5a97f;
     }
 
-    .project a {
-      color: var(--accent);
+    a:hover {
       text-decoration: underline;
     }
 
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
@@ -117,66 +97,54 @@
 <body>
   <header>
     <h1>Mackenzie Treadway</h1>
-    <p>Future Software Engineer | Clean Code & Creative Thinking</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <section id="about">
-    <h2>About</h2>
-    <p>I’m a passionate and detail-oriented aspiring software engineer with a strong foundation in Java, C++, and web development. With experience teaching STEM and working with kids, I bring patience, adaptability, and strong communication to every team I join. I’m especially interested in debugging, real-time systems, and solving complex problems with clean, maintainable code. I’ll be graduating with a B.S. in Computer Science in October 2025 and am eager to join a company where I can grow, contribute meaningfully, and build a stable future for myself and my partner.</p>
+    <h2>About Me</h2>
+    <p>
+      I’m a software engineer with a strong foundation in Java, C#, Python, JavaScript, and C++. I enjoy solving real-time problems, debugging, and building clean, elegant user experiences. I’m currently finishing my B.S. in Computer Science with a minor in Art and have experience teaching STEM and coding to youth. Passionate about both performance and precision, I aim to bring clarity and creativity into every project I touch.
+    </p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Flappy Bird (JavaScript Game)</h3>
-      <p>A side-scrolling mock of the classic Flappy Bird game built using HTML, CSS, and JavaScript.</p>
-      <a href="https://github.com/mtread/flappy-bird-js" target="_blank">GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>Memory Match Game</h3>
-      <p>A fun and interactive memory card matching game using vanilla JavaScript with animations and scoring logic.</p>
-      <a href="https://github.com/mtread/memory-match" target="_blank">GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>Ping Pong Game</h3>
-      <p>Classic two-player ping pong browser game created with JavaScript canvas.</p>
-      <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Live Demo</a> |
-      <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>Shape Calculator (Java GUI)</h3>
-      <p>Java-based GUI application that calculates the area and perimeter of different geometric shapes.</p>
-      <a href="https://github.com/mtread/cmsc335-shapes" target="_blank">GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>Coffee Website</h3>
-      <p>A visually appealing and informative webpage about Coffea Arabica. Built with HTML and CSS.</p>
-      <a href="https://github.com/mtread/coffea-arabica" target="_blank">GitHub</a>
-    </div>
+    <ul>
+      <li>
+        <strong><a href="https://mtread.github.io/memory-match/" target="_blank">Memory Match Game</a></strong> — 
+        <a href="https://github.com/mtread/memory-match" target="_blank">GitHub</a>
+      </li>
+      <li>
+        <strong><a href="https://mtread.github.io/flappy-bird-js/" target="_blank">Flappy Bird Mock Game</a></strong> — 
+        <a href="https://github.com/mtread/flappy-bird-js" target="_blank">GitHub</a>
+      </li>
+      <li>
+        <strong><a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Ping Pong Game</a></strong> — 
+        <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">GitHub</a>
+      </li>
+      <li>
+        <strong><a href="https://mtread.github.io/coffea-arabica/" target="_blank">Coffee Webpage</a></strong> — 
+        <a href="https://github.com/mtread/coffea-arabica" target="_blank">GitHub</a>
+      </li>
+      <li>
+        <strong>Shape Calculator</strong> — 
+        <a href="https://github.com/mtread/cmsc335-shapes" target="_blank">GitHub</a>
+      </li>
+    </ul>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Feel free to reach out if you'd like to collaborate or connect:</p>
-    <ul>
-      <li>Email: <a href="mailto:mtreadway1@student.csmd.edu">mtreadway1@student.csmd.edu</a></li>
-      <li>GitHub: <a href="https://github.com/mtread" target="_blank">github.com/mtread</a></li>
-    </ul>
+    <p>
+      Email: <a href="mailto:mackenzietreadwaydev@gmail.com">mackenzietreadwaydev@gmail.com</a>
+    </p>
+    <p>
+      GitHub: <a href="https://github.com/mtread" target="_blank">github.com/mtread</a>
+    </p>
   </section>
-
-  <footer>
-    &copy; 2025 Mackenzie Treadway. All rights reserved.
-  </footer>
 </body>
 </html>
