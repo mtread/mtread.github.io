@@ -1,64 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mackenzie Treadway | Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mackenzie Treadway — Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* === Base Resets === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #0d0d0f;
+      color: #d4d6d9;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    /* === Hero Section === */
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 4rem;
+      color: #fca17d;
+      text-shadow: 0 0 12px #fca17d88;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #d4d6d9;
+    }
+
+    /* === Section Titles === */
+    section h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid #fca17d;
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #fca17d;
+    }
+
+    /* === About === */
+    .about {
+      max-width: 700px;
+      margin: 0 auto 4rem auto;
+      padding: 1.5rem;
+      background-color: #1a1a1d;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
+    }
+
+    /* === Projects === */
+    .projects {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .project-card {
+      min-width: 300px;
+      flex-shrink: 0;
+      background-color: #1a1a1d;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
+      scroll-snap-align: start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(252, 161, 125, 0.4);
+    }
+
+    .project-card h3 {
+      color: #fca17d;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card a {
+      color: #d4d6d9;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+      color: #fca17d;
+    }
+
+    /* === Contact === */
+    .contact {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background-color: #1a1a1d;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact a {
+      color: #fca17d;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Responsive Design === */
+    @media (max-width: 768px) {
+      .projects {
+        flex-direction: column;
+        overflow-x: visible;
+      }
+
+      .project-card {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <header class="hero">
-    <h1 class="signature">Mackenzie Treadway</h1>
-    <p class="subtitle">Software Engineer • Problem Solver • Lifelong Learner</p>
-  </header>
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Mackenzie Treadway</h1>
+    <p>Aspiring Software Engineer | Real-Time Systems · Debugging · Creative Thinker</p>
+  </div>
 
+  <!-- About -->
   <section class="about">
     <h2>About Me</h2>
     <p>
-      I'm Mackenzie, a software engineer who thrives on building reliable, efficient systems and continuously growing through hands-on experience. I bring a grounded, detail-oriented approach to development, combining logical structure with thoughtful design. I'm currently finishing my B.S. in Computer Science and looking for opportunities to grow within a professional tech environment.
+      I'm a Computer Science student graduating in October 2025 with a passion for clean, efficient code and solving problems that matter. I enjoy real-time systems, debugging, and algorithm development. With experience teaching STEM to youth and working hands-on in retail and events, I bring a unique mix of technical skill and people-centered communication.
     </p>
   </section>
 
-  <section class="projects">
+  <!-- Projects -->
+  <section class="projects-section">
     <h2>Projects</h2>
-    <div class="project-gallery">
+    <div class="projects">
       <div class="project-card">
         <h3>Memory Match Game</h3>
-        <p>A browser-based game using JavaScript with animation, scoring system, and localStorage high score tracking.</p>
-        <a href="#" class="btn">Live Demo</a>
-        <a href="#" class="btn">GitHub</a>
+        <p>A browser-based game with animated flips and a best score tracker using localStorage.</p>
+        <a href="#">GitHub</a>
+        <a href="#">Live Demo</a>
       </div>
       <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>This very portfolio, showcasing elegant design, accessibility, and responsive layouts.</p>
-        <a href="#" class="btn">Live Demo</a>
-        <a href="#" class="btn">GitHub</a>
+        <h3>Platformer Prototype</h3>
+        <p>2D platformer built with JavaScript and canvas elements, demonstrating physics and collision.</p>
+        <a href="#">GitHub</a>
+        <a href="#">Live Demo</a>
       </div>
-      <!-- Add more projects as needed -->
+      <div class="project-card">
+        <h3>Tic Tac Toe AI</h3>
+        <p>A C++ implementation of a minimax-based AI for unbeatable Tic Tac Toe gameplay.</p>
+        <a href="#">GitHub</a>
+        <a href="#">Live Demo</a>
+      </div>
     </div>
   </section>
 
-  <section class="resume">
-    <h2>Resume</h2>
-    <a href="#" class="resume-btn">Download Resume (PDF)</a>
-  </section>
-
+  <!-- Contact -->
   <section class="contact">
-    <h2>Let's Connect</h2>
-    <p>I'm open to professional opportunities and collaboration. Reach out via email or connect on LinkedIn or GitHub.</p>
-    <ul class="contact-links">
-      <li><a href="mailto:youremail@example.com">Email</a></li>
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="#">GitHub</a></li>
-    </ul>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:mackenzie@email.com">mackenzie@email.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
   </section>
-
-  <footer>
-    <p>&copy; 2025 Mackenzie Treadway</p>
-  </footer>
 </body>
-
 </html>
