@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mackenzie Treadway | Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mackenzie Treadway — Portfolio</title>
@@ -15,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* === Base Resets === */
     * {
       margin: 0;
       padding: 0;
@@ -30,7 +23,6 @@
       padding: 2rem;
     }
 
-    /* === Hero Section === */
     .hero {
       text-align: center;
       margin-bottom: 3rem;
@@ -46,10 +38,8 @@
 
     .hero p {
       font-size: 1.2rem;
-      color: #d4d6d9;
     }
 
-    /* === Section Titles === */
     section h2 {
       font-size: 2rem;
       border-bottom: 2px solid #fca17d;
@@ -58,7 +48,6 @@
       color: #fca17d;
     }
 
-    /* === About === */
     .about {
       max-width: 700px;
       margin: 0 auto 4rem auto;
@@ -68,7 +57,6 @@
       box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
     }
 
-    /* === Projects === */
     .projects {
       display: flex;
       gap: 1.5rem;
@@ -109,7 +97,6 @@
       color: #fca17d;
     }
 
-    /* === Contact === */
     .contact {
       margin-top: 3rem;
       padding: 1.5rem;
@@ -130,7 +117,6 @@
       text-decoration: underline;
     }
 
-    /* === Responsive Design === */
     @media (max-width: 768px) {
       .projects {
         flex-direction: column;
@@ -149,10 +135,6 @@
 </head>
 
 <body>
-  <header class="hero">
-    <h1 class="signature">Mackenzie Treadway</h1>
-    <p class="subtitle">Software Engineer • Problem Solver • Lifelong Learner</p>
-  </header>
   <!-- Hero -->
   <div class="hero">
     <h1>Mackenzie Treadway</h1>
@@ -163,69 +145,59 @@
   <section class="about">
     <h2>About Me</h2>
     <p>
-      I'm Mackenzie, a software engineer who thrives on building reliable, efficient systems and continuously growing through hands-on experience. I bring a grounded, detail-oriented approach to development, combining logical structure with thoughtful design. I'm currently finishing my B.S. in Computer Science and looking for opportunities to grow within a professional tech environment.
       I'm a Computer Science student graduating in October 2025 with a passion for clean, efficient code and solving problems that matter. I enjoy real-time systems, debugging, and algorithm development. With experience teaching STEM to youth and working hands-on in retail and events, I bring a unique mix of technical skill and people-centered communication.
     </p>
   </section>
 
-  <section class="projects">
   <!-- Projects -->
   <section class="projects-section">
     <h2>Projects</h2>
-    <div class="project-gallery">
     <div class="projects">
+
       <div class="project-card">
         <h3>Memory Match Game</h3>
-        <p>A browser-based game using JavaScript with animation, scoring system, and localStorage high score tracking.</p>
-        <a href="#" class="btn">Live Demo</a>
-        <a href="#" class="btn">GitHub</a>
         <p>A browser-based game with animated flips and a best score tracker using localStorage.</p>
-        <a href="#">GitHub</a>
-        <a href="#">Live Demo</a>
+        <a href="https://github.com/mtread/memory-match" target="_blank">GitHub</a>
+        <a href="https://mtread.github.io/memory-match/" target="_blank">Live Demo</a>
       </div>
+
       <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>This very portfolio, showcasing elegant design, accessibility, and responsive layouts.</p>
-        <a href="#" class="btn">Live Demo</a>
-        <a href="#" class="btn">GitHub</a>
-        <h3>Platformer Prototype</h3>
-        <p>2D platformer built with JavaScript and canvas elements, demonstrating physics and collision.</p>
-        <a href="#">GitHub</a>
-        <a href="#">Live Demo</a>
+        <h3>Flappy Bird Clone</h3>
+        <p>A JavaScript version of the classic Flappy Bird game with hit detection and scoring.</p>
+        <a href="https://github.com/mtread/flappy-bird-js" target="_blank">GitHub</a>
+        <a href="https://mtread.github.io/flappy-bird-js/" target="_blank">Live Demo</a>
       </div>
+
+      <div class="project-card">
+        <h3>Coffea Arabica Website</h3>
+        <p>A themed multi-page website with responsive design and custom visuals.</p>
+        <a href="https://github.com/mtread/coffea-arabica" target="_blank">GitHub</a>
+        <a href="https://mtread.github.io/coffea-arabica/" target="_blank">Live Demo</a>
+      </div>
+
       <div class="project-card">
         <h3>Tic Tac Toe AI</h3>
         <p>A C++ implementation of a minimax-based AI for unbeatable Tic Tac Toe gameplay.</p>
         <a href="#">GitHub</a>
         <a href="#">Live Demo</a>
       </div>
-      <!-- Add more projects as needed -->
-    </div>
-  </section>
 
-  <section class="resume">
-    <h2>Resume</h2>
-    <a href="#" class="resume-btn">Download Resume (PDF)</a>
+      <div class="project-card">
+        <h3>Ping Pong Game</h3>
+        <p>Classic Pong-style game built in JavaScript with ball physics and scoring.</p>
+        <a href="https://github.com/mtread/ping-pong" target="_blank">GitHub</a>
+        <a href="https://mtread.github.io/ping-pong/" target="_blank">Live Demo</a>
+      </div>
+
+    </div>
   </section>
 
   <!-- Contact -->
   <section class="contact">
-    <h2>Let's Connect</h2>
-    <p>I'm open to professional opportunities and collaboration. Reach out via email or connect on LinkedIn or GitHub.</p>
-    <ul class="contact-links">
-      <li><a href="mailto:youremail@example.com">Email</a></li>
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="#">GitHub</a></li>
-    </ul>
     <h2>Contact</h2>
     <p>Email: <a href="mailto:mackenzie@email.com">mackenzie@email.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    <p>GitHub: <a href="https://github.com/mtread" target="_blank">github.com/mtread</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
   </section>
-
-  <footer>
-    <p>&copy; 2025 Mackenzie Treadway</p>
-  </footer>
 </body>
-
 </html>
