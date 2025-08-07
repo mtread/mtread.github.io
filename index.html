@@ -1,292 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mackenzie Treadway - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Raleway:wght@300;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #fdfdf9;
-      --matcha: #C1DECB;
-      --pink: #f3c2ce;
-      --text: #000000;
-      --link: #ce8ea8;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Raleway', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      padding-bottom: 60px;
-    }
-
-    header {
-      background: var(--matcha);
-      text-align: center;
-      padding: 60px 20px 20px;
-    }
-
-    .handwriting-name {
-      font-family: 'Caveat', cursive;
-      font-size: 3.5em;
-      color: var(--text);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .subtitle {
-      font-weight: 300;
-      font-size: 1.3em;
-      color: #666;
-      margin-top: 6px;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: var(--matcha);
-      padding: 14px 0;
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid #eee;
-      z-index: 10;
-    }
-
-    nav a {
-      margin: 0 18px;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1em;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--link);
-    }
-
-    section {
-      max-width: 880px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      text-align: center;
-      color: var(--link);
-      margin-bottom: 20px;
-    }
-
-    #about p {
-      font-size: 1.1em;
-      line-height: 1.7;
-      margin-bottom: 14px;
-      color: #555;
-      text-align: center;
-    }
-
-    #projects {
-      overflow-x: auto;
-      white-space: nowrap;
-      padding-bottom: 12px;
-    }
-
-    .project-row {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-}
-
-.project-row .project-card {
-  display: inline-block;
-}
-    
-    .project-card {
-      display: inline-block;
-      vertical-align: top;
-      background: var(--matcha);
-      border-radius: 12px;
-      margin-right: 20px;
-      width: 270px;
-      padding: 20px;
-      border: 1px solid #eee;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-      word-wrap: break-word; /* ensures text breaks inside container */
-      white-space: normal; /* allows wrapping */
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card h3 {
-      color: var(--link);
-      margin-bottom: 8px;
-      word-wrap: break-word;
-    }
-
-    .project-card p {
-      font-size: 0.95em;
-      margin-bottom: 10px;
-      word-wrap: break-word;
-      white-space: normal;
-    }
-
-    .project-card a {
-      font-size: 0.9em;
-      color: var(--link);
-      text-decoration: none;
-      margin-right: 8px;
-    }
-
-    .project-card a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 20px;
-    }
-
-    .contact-icons a svg {
-      width: 28px;
-      height: 28px;
-      fill: var(--text);
-      transition: fill 0.3s ease;
-    }
-
-    .contact-icons a:hover svg {
-      fill: var(--link);
-    }
-
-    footer {
-      font-size: 0.85em;
-      text-align: center;
-      color: #aaa;
-      margin-top: 80px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mackenzie Lynn | Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-  <header>
-    <div class="handwriting-name">Hey, I'm Mackenzie!</div>
-    <div class="subtitle">Aspiring Software Engineer</div>
+<body>
+  <header class="hero">
+    <h1 class="signature">Mackenzie Lynn</h1>
+    <p class="subtitle">Software Engineer • Problem Solver • Lifelong Learner</p>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
+  <section class="about">
     <h2>About Me</h2>
     <p>
-      I'm a senior Computer Science student with a minor in Art, passionate about building elegant, efficient software solutions. I bring experience working in collaborative environments, leading technical initiatives, and explaining complex ideas clearly — skills that make me a strong contributor in fast-paced engineering teams.
-    </p>
-    <p>
-      I’m seeking a software engineering role where I can continue to grow, solve meaningful problems, and create tools that improve the lives of users.
+      I'm Mackenzie, a software engineer who thrives on building reliable, efficient systems and continuously growing through hands-on experience. I bring a grounded, detail-oriented approach to development, combining logical structure with thoughtful design. I'm currently finishing my B.S. in Computer Science and looking for opportunities to grow within a professional tech environment.
     </p>
   </section>
 
-  <section id="projects">
+  <section class="projects">
     <h2>Projects</h2>
-
-  <h3 style="margin: 20px 0 10px; color: var(--text); text-align: center;">Games with Live Demos</h3>
-  <div class="project-row">
-    <div class="project-card">
-     <h3>Memory Match Game</h3>
-     <p>A classic card matching game built with HTML, CSS, and JavaScript featuring flip animations and best score tracking.</p>
-     <a href="https://github.com/mtread/memory-match" target="_blank" rel="noopener noreferrer">GitHub</a> |
-    <a href="https://mtread.github.io/memory-match/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-  </div>
-    
-    <div class="project-card">
-      <h3>Flappy Bird Clone</h3>
-      <p>HTML5 Canvas game mimicking Flappy Bird mechanics with collision and score logic.</p>
-      <a href="https://github.com/mtread/flappy-bird-js" target="_blank">GitHub</a> |
-      <a href="https://mtread.github.io/flappy-bird-js/" target="_blank">Live Demo</a>
+    <div class="project-gallery">
+      <div class="project-card">
+        <h3>Memory Match Game</h3>
+        <p>A browser-based game using JavaScript with animation, scoring system, and localStorage high score tracking.</p>
+        <a href="#" class="btn">Live Demo</a>
+        <a href="#" class="btn">GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>This very portfolio, showcasing elegant design, accessibility, and responsive layouts.</p>
+        <a href="#" class="btn">Live Demo</a>
+        <a href="#" class="btn">GitHub</a>
+      </div>
+      <!-- Add more projects as needed -->
     </div>
-
-    <div class="project-card">
-      <h3>JavaScript Pong Game</h3>
-      <p>Classic Pong game with basic AI, collision detection, and user input handling.</p>
-      <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">GitHub</a> |
-      <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Live Demo</a>
-    </div>
-  </div>
-
-  <h3 style="margin: 30px 0 10px; color: var(--text); text-align: center;">Other Development Projects</h3>
-  <div class="project-row">
-    <div class="project-card">
-      <h3>Shapes Calculator (Java)</h3>
-      <p>CLI-based OOP program for calculating geometric shapes using polymorphism.</p>
-      <a href="https://github.com/mtread/cmsc335-shapes" target="_blank">GitHub</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Coffea Arabica Website</h3>
-      <p>A fictional coffee brand landing page showcasing front-end layout skills.</p>
-      <a href="https://mtread.github.io/coffea-arabica/" target="_blank">View Site</a>
-    </div>
-  </div>
-</section>
-
-
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-icons">
-      <a href="https://github.com/mtread" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
-          <title>GitHub icon</title>
-          <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 
-          9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416
-          -.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729
-          1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.304 3.495.997
-          .108-.775.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93
-          0-1.31.467-2.38 1.236-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322
-          3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 
-          3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 
-          1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 
-          .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-        </svg>
-      </a>
-      <a href="mailto:mtread03@gmail.com" aria-label="Email" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <title>Email icon</title>
-          <path d="M12 12.713L.545 3.3A2 2 0 012.003 2h19.994a2 2 0 011.458 1.3L12 12.713zM12 14.83L2.003 4H2v16h20V4h-.003L12 14.83z"/>
-        </svg>
-      </a>
-      <a href="https://linkedin.com/in/mtread" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <title>LinkedIn icon</title>
-          <path d="M20.447 20.452h-3.554v-5.568c0-1.327-.026-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.939v5.666H9.352V9h3.413v1.561h.05c.476-.9 1.635-1.85 3.367-1.85 3.6 0 4.263 2.368 4.263 5.452v6.289zM5.337 7.433a2.062 2.062 0 110-4.125 2.062 2.062 0 010 4.125zM6.716 20.452H3.958V9h2.758v11.452zM22.225 0H1.771C.791 0 0 .771 0 1.723v20.555C0 23.23.791 24 1.771 24h20.451C23.205 24 24 23.23 24 22.278V1.723C24 .771 23.205 0 22.225 0z"/>
-        </svg>
-      </a>
-    </div>
+  <section class="resume">
+    <h2>Resume</h2>
+    <a href="#" class="resume-btn">Download Resume (PDF)</a>
+  </section>
+
+  <section class="contact">
+    <h2>Let's Connect</h2>
+    <p>I'm open to professional opportunities and collaboration. Reach out via email or connect on LinkedIn or GitHub.</p>
+    <ul class="contact-links">
+      <li><a href="mailto:youremail@example.com">Email</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">GitHub</a></li>
+    </ul>
   </section>
 
   <footer>
-    &copy; 2025 Mackenzie Treadway — All Rights Reserved
+    <p>&copy; 2025 Mackenzie Lynn</p>
   </footer>
-
 </body>
+
 </html>
