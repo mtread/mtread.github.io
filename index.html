@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mackenzie Treadway — Portfolio</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-
+  <title>Mackenzie Treadway | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Rochester&display=swap" rel="stylesheet">
   <style>
-    /* === Base Resets === */
+    :root {
+      --bg: #1b1f1d;
+      --text: #f5f5f5;
+      --accent: #a8d5ba;
+      --accent-light: #d7f2e3;
+      --card: #2c2f2e;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -18,176 +22,161 @@
 
     body {
       font-family: 'Raleway', sans-serif;
-      background-color: #0d0d0f;
-      color: #d4d6d9;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       padding: 2rem;
     }
 
-    /* === Hero Section === */
-    .hero {
+    header {
       text-align: center;
       margin-bottom: 3rem;
     }
 
-    .hero h1 {
-      font-family: 'Caveat', cursive;
-      font-size: 4rem;
-      color: #fca17d;
-      text-shadow: 0 0 12px #fca17d88;
-      margin-bottom: 0.5rem;
+    header h1 {
+      font-family: 'Rochester', cursive;
+      font-size: 3rem;
+      color: var(--accent-light);
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      color: #d4d6d9;
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: var(--accent);
     }
 
-    /* === Section Titles === */
-    section h2 {
-      font-size: 2rem;
-      border-bottom: 2px solid #fca17d;
-      display: inline-block;
-      margin-bottom: 1rem;
-      color: #fca17d;
-    }
-
-    /* === About === */
-    .about {
-      max-width: 700px;
-      margin: 0 auto 4rem auto;
-      padding: 1.5rem;
-      background-color: #1a1a1d;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
-    }
-
-    /* === Projects === */
-    .projects {
+    nav {
       display: flex;
-      gap: 1.5rem;
-      overflow-x: auto;
-      padding-bottom: 1rem;
-      scroll-snap-type: x mandatory;
+      justify-content: center;
+      margin-bottom: 2rem;
+      gap: 2rem;
     }
 
-    .project-card {
-      min-width: 300px;
-      flex-shrink: 0;
-      background-color: #1a1a1d;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
-      scroll-snap-align: start;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    nav a {
+      color: var(--accent-light);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(252, 161, 125, 0.4);
+    nav a:hover {
+      border-color: var(--accent-light);
     }
 
-    .project-card h3 {
-      color: #fca17d;
+    section {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.25rem;
+    }
+
+    .project {
+      background-color: var(--card);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px rgba(168, 213, 186, 0.1);
+    }
+
+    .project h3 {
+      color: var(--accent-light);
       margin-bottom: 0.5rem;
     }
 
-    .project-card a {
-      color: #d4d6d9;
-      text-decoration: none;
-      margin-right: 1rem;
+    .project p {
+      margin-bottom: 0.5rem;
     }
 
-    .project-card a:hover {
-      text-decoration: underline;
-      color: #fca17d;
-    }
-
-    /* === Contact === */
-    .contact {
-      margin-top: 3rem;
-      padding: 1.5rem;
-      background-color: #1a1a1d;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contact a {
-      color: #fca17d;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
+    .project a {
+      color: var(--accent);
       text-decoration: underline;
     }
 
-    /* === Responsive Design === */
-    @media (max-width: 768px) {
-      .projects {
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      nav {
         flex-direction: column;
-        overflow-x: visible;
-      }
-
-      .project-card {
-        width: 100%;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
+        align-items: center;
       }
     }
   </style>
 </head>
-
 <body>
-  <!-- Hero -->
-  <div class="hero">
+  <header>
     <h1>Mackenzie Treadway</h1>
-    <p>Aspiring Software Engineer | Real-Time Systems · Debugging · Creative Thinker</p>
-  </div>
+    <p>Future Software Engineer | Clean Code & Creative Thinking</p>
+  </header>
 
-  <!-- About -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a Computer Science student graduating in October 2025 with a passion for clean, efficient code and solving problems that matter. I enjoy real-time systems, debugging, and algorithm development. With experience teaching STEM to youth and working hands-on in retail and events, I bring a unique mix of technical skill and people-centered communication.
-    </p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I’m a passionate and detail-oriented aspiring software engineer with a strong foundation in Java, C++, and web development. With experience teaching STEM and working with kids, I bring patience, adaptability, and strong communication to every team I join. I’m especially interested in debugging, real-time systems, and solving complex problems with clean, maintainable code. I’ll be graduating with a B.S. in Computer Science in October 2025 and am eager to join a company where I can grow, contribute meaningfully, and build a stable future for myself and my partner.</p>
   </section>
 
-  <!-- Projects -->
-  <section class="projects-section">
+  <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Memory Match Game</h3>
-        <p>A browser-based game with animated flips and a best score tracker using localStorage.</p>
-        <a href="#">GitHub</a>
-        <a href="#">Live Demo</a>
-      </div>
-      <div class="project-card">
-        <h3>Platformer Prototype</h3>
-        <p>2D platformer built with JavaScript and canvas elements, demonstrating physics and collision.</p>
-        <a href="#">GitHub</a>
-        <a href="#">Live Demo</a>
-      </div>
-      <div class="project-card">
-        <h3>Tic Tac Toe AI</h3>
-        <p>A C++ implementation of a minimax-based AI for unbeatable Tic Tac Toe gameplay.</p>
-        <a href="#">GitHub</a>
-        <a href="#">Live Demo</a>
-      </div>
+
+    <div class="project">
+      <h3>Flappy Bird (JavaScript Game)</h3>
+      <p>A side-scrolling mock of the classic Flappy Bird game built using HTML, CSS, and JavaScript.</p>
+      <a href="https://github.com/mtread/flappy-bird-js" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <h3>Memory Match Game</h3>
+      <p>A fun and interactive memory card matching game using vanilla JavaScript with animations and scoring logic.</p>
+      <a href="https://github.com/mtread/memory-match" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <h3>Ping Pong Game</h3>
+      <p>Classic two-player ping pong browser game created with JavaScript canvas.</p>
+      <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Live Demo</a> |
+      <a href="https://github.com/mtread/cmst290-pong-game" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <h3>Shape Calculator (Java GUI)</h3>
+      <p>Java-based GUI application that calculates the area and perimeter of different geometric shapes.</p>
+      <a href="https://github.com/mtread/cmsc335-shapes" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <h3>Coffee Website</h3>
+      <p>A visually appealing and informative webpage about Coffea Arabica. Built with HTML and CSS.</p>
+      <a href="https://github.com/mtread/coffea-arabica" target="_blank">GitHub</a>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="contact">
+  <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:mackenzie@email.com">mackenzie@email.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
+    <p>Feel free to reach out if you'd like to collaborate or connect:</p>
+    <ul>
+      <li>Email: <a href="mailto:mtreadway1@student.csmd.edu">mtreadway1@student.csmd.edu</a></li>
+      <li>GitHub: <a href="https://github.com/mtread" target="_blank">github.com/mtread</a></li>
+    </ul>
   </section>
+
+  <footer>
+    &copy; 2025 Mackenzie Treadway. All rights reserved.
+  </footer>
 </body>
 </html>
