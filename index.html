@@ -59,20 +59,15 @@
 
     .projects {
       display: flex;
+      flex-direction: column;
       gap: 1.5rem;
-      overflow-x: auto;
-      padding-bottom: 1rem;
-      scroll-snap-type: x mandatory;
     }
 
     .project-card {
-      min-width: 300px;
-      flex-shrink: 0;
       background-color: #1f2833;
       padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 0 10px #45a29e33;
-      scroll-snap-align: start;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -97,6 +92,23 @@
       color: #45a29e;
     }
 
+    .view-repos-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #45a29e;
+      color: #0b0c10;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .view-repos-btn:hover {
+      background-color: #66fcf1;
+      transform: translateY(-2px);
+    }
+
     .contact {
       margin-top: 3rem;
       padding: 1.5rem;
@@ -118,15 +130,6 @@
     }
 
     @media (max-width: 768px) {
-      .projects {
-        flex-direction: column;
-        overflow-x: visible;
-      }
-
-      .project-card {
-        width: 100%;
-      }
-
       .hero h1 {
         font-size: 3rem;
       }
@@ -184,6 +187,10 @@
         <a href="https://github.com/mtread/Extended_Semantic_Analyzer" target="_blank">GitHub</a>
       </div>
 
+    </div>
+
+    <div style="text-align:center;">
+      <a href="https://github.com/mtread" target="_blank" class="view-repos-btn">View All Repos</a>
     </div>
   </section>
 
