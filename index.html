@@ -6,7 +6,7 @@
   <title>Mackenzie Treadway — Portfolio</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -16,9 +16,9 @@
     }
 
     body {
-      font-family: 'Raleway', sans-serif;
-      background-color: #0d0d0f;
-      color: #d4d6d9;
+      font-family: 'Roboto Mono', monospace;
+      background-color: #0b0c10;
+      color: #c5c6c7;
       line-height: 1.6;
       padding: 2rem;
     }
@@ -29,32 +29,32 @@
     }
 
     .hero h1 {
-      font-family: 'Caveat', cursive;
-      font-size: 4rem;
-      color: #fca17d;
-      text-shadow: 0 0 12px #fca17d88;
+      font-size: 3.5rem;
+      color: #66fcf1;
+      text-shadow: 0 0 10px #45a29e88;
       margin-bottom: 0.5rem;
     }
 
     .hero p {
       font-size: 1.2rem;
+      color: #c5c6c7;
     }
 
     section h2 {
-      font-size: 2rem;
-      border-bottom: 2px solid #fca17d;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #45a29e;
       display: inline-block;
       margin-bottom: 1rem;
-      color: #fca17d;
+      color: #66fcf1;
     }
 
     .about {
       max-width: 700px;
       margin: 0 auto 4rem auto;
       padding: 1.5rem;
-      background-color: #1a1a1d;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
+      background-color: #1f2833;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #45a29e33;
     }
 
     .projects {
@@ -68,48 +68,48 @@
     .project-card {
       min-width: 300px;
       flex-shrink: 0;
-      background-color: #1a1a1d;
+      background-color: #1f2833;
       padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 0 10px #45a29e33;
       scroll-snap-align: start;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(252, 161, 125, 0.4);
+      box-shadow: 0 0 15px #66fcf188;
     }
 
     .project-card h3 {
-      color: #fca17d;
+      color: #66fcf1;
       margin-bottom: 0.5rem;
     }
 
     .project-card a {
-      color: #d4d6d9;
+      color: #c5c6c7;
       text-decoration: none;
       margin-right: 1rem;
     }
 
     .project-card a:hover {
       text-decoration: underline;
-      color: #fca17d;
+      color: #45a29e;
     }
 
     .contact {
       margin-top: 3rem;
       padding: 1.5rem;
-      background-color: #1a1a1d;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(252, 161, 125, 0.2);
+      background-color: #1f2833;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #45a29e33;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .contact a {
-      color: #fca17d;
+      color: #66fcf1;
       text-decoration: none;
     }
 
@@ -138,14 +138,14 @@
   <!-- Hero -->
   <div class="hero">
     <h1>Mackenzie Treadway</h1>
-    <p>Aspiring Software Engineer | Real-Time Systems · Debugging · Creative Thinker</p>
+    <p>Computer Science Graduate | Software Development · Algorithms · Systems</p>
   </div>
 
   <!-- About -->
   <section class="about">
     <h2>About Me</h2>
     <p>
-      I'm a Computer Science student graduating in October 2025 with a passion for clean, efficient code and solving problems that matter. I enjoy real-time systems, debugging, and algorithm development. With experience teaching STEM to youth and working hands-on in retail and events, I bring a unique mix of technical skill and people-centered communication.
+      I'm a Computer Science graduate passionate about writing clean, efficient code and solving complex problems. My experience spans software development, algorithm design, Linux system projects, and teaching STEM. I enjoy building applications that combine technical rigor with practical functionality.
     </p>
   </section>
 
@@ -155,31 +155,33 @@
     <div class="projects">
 
       <div class="project-card">
-        <h3>Memory Match Game</h3>
-        <p>A browser-based game with animated flips and a best score tracker using localStorage.</p>
-        <a href="https://github.com/mtread/memory-match" target="_blank">GitHub</a>
-        <a href="https://mtread.github.io/memory-match/" target="_blank">Live Demo</a>
+        <h3>Java OOP Shape Calculator</h3>
+        <p>Command-line program calculating areas and volumes for multiple geometric shapes using inheritance and polymorphism.</p>
+        <a href="https://github.com/mtread/Lexical_Analyzer" target="_blank">GitHub</a>
       </div>
 
       <div class="project-card">
-        <h3>Flappy Bird Clone</h3>
-        <p>A JavaScript version of the classic Flappy Bird game with hit detection and scoring.</p>
-        <a href="https://github.com/mtread/flappy-bird-js" target="_blank">GitHub</a>
-        <a href="https://mtread.github.io/flappy-bird-js/" target="_blank">Live Demo</a>
+        <h3>Lexical Analyzer</h3>
+        <p>Analyzes source code tokens as part of a compiler project.</p>
+        <a href="https://github.com/mtread/Lexical_Analyzer" target="_blank">GitHub</a>
       </div>
 
       <div class="project-card">
-        <h3>Coffea Arabica Website</h3>
-        <p>A themed multi-page website with responsive design and custom visuals.</p>
-        <a href="https://github.com/mtread/coffea-arabica" target="_blank">GitHub</a>
-        <a href="https://mtread.github.io/coffea-arabica/" target="_blank">Live Demo</a>
+        <h3>Syntax Analyzer</h3>
+        <p>Parses tokenized input to build syntax trees for compiler operations.</p>
+        <a href="https://github.com/mtread/Syntax_Analyzer" target="_blank">GitHub</a>
       </div>
 
       <div class="project-card">
-        <h3>Ping Pong Game</h3>
-        <p>Classic Pong-style game built in JavaScript with ball physics and scoring.</p>
-        <a href="https://github.com/mtread/ping-pong" target="_blank">GitHub</a>
-        <a href="https://mtread.github.io/cmst290-pong-game/" target="_blank">Live Demo</a>
+        <h3>Semantic Analyzer</h3>
+        <p>Validates syntax trees and ensures semantic correctness in compiler workflow.</p>
+        <a href="https://github.com/mtread/Semantic_Analyzer" target="_blank">GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Extended Semantic Analyzer</h3>
+        <p>Enhances the semantic analyzer with advanced checks and error reporting.</p>
+        <a href="https://github.com/mtread/Extended_Semantic_Analyzer" target="_blank">GitHub</a>
       </div>
 
     </div>
@@ -188,7 +190,7 @@
   <!-- Contact -->
   <section class="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:mackenzie@email.com">mackenzie@email.com</a></p>
+    <p>Email: <a href="mailto:mtread03@gmail.com">mtread03@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/mtread" target="_blank">github.com/mtread</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
   </section>
